@@ -14,11 +14,6 @@ Proyecto de ingeniería de requisitos, de un software para asesorías académica
 **Codificación**
  - PEP8 Estandar
  
-**Base de datos**
-  - MySQL
-  - **Usuario**: admin-admin
-  - **Nombre base de datos**:asesorate_sas
- 
 
 **Vistas:** 
  - HTML

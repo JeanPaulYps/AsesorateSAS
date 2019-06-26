@@ -23,12 +23,12 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer   
     
-class EstudianteViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
-    queryset = Estudiante.objects.all()
-    serializer_class = EstudianteSerializer   
+#class EstudianteViewSet(viewsets.ModelViewSet):
+ #   """
+  #  API endpoint that allows groups to be viewed or edited.
+   # """
+   # queryset = Estudiante.objects.all()
+   # serializer_class = EstudianteSerializer   
     
     
     

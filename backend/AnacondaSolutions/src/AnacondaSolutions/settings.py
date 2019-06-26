@@ -90,10 +90,12 @@ DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'asesorate_sas',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
+        'USER': 'asesorate',
+        'PASSWORD': 't^g\d4HEX',
+        'HOST':'asesoratesas.postgres.database.azure.com',
+        'PORT':'5432',
     }
 }
 

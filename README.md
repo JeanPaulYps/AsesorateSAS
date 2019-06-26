@@ -33,10 +33,12 @@ Proyecto de ingeniería de requisitos, de un software para asesorías académica
  - PEP8 Estandar
  
 **Base de datos**
-- MySQL
-  -**Usuario**: admin-admin
+- PostgreSQL
+  -**Dirección**: asesoratesas.postgres.database.azure.com
+  -**Usuario**: asesorate
+  -**Contraseña**: t^g\d4HEX
   -**Nombre base de datos**:asesorate_sas
-  
+
  **Notas adicionales**
  En django se manejan los modelos, los serializadores y los viewer
  los modelos son las tablas que qdaran en la bd asi que a los que 

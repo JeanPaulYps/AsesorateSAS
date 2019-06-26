@@ -34,10 +34,10 @@ Proyecto de ingeniería de requisitos, de un software para asesorías académica
  
 **Base de datos**
 - PostgreSQL
-  -**Dirección**: asesoratesas.postgres.database.azure.com
-  -**Usuario**: asesorate@asesoratesas
-  -**Contraseña**: t^g\d4HEX
-  -**Nombre base de datos**:asesorate_sas
+  - **Dirección**: asesoratesas.postgres.database.azure.com
+  - **Usuario**: asesorate@asesoratesas
+  - **Contraseña**: t^g\d4HEX
+  - **Nombre base de datos**:asesorate_sas
 
  **Notas adicionales**
  En django se manejan los modelos, los serializadores y los viewer

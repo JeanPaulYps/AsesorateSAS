@@ -1,6 +1,11 @@
 # AsesorateSAS
 Proyecto de ingeniería de requisitos, de un software para asesorías académicas
 
+```Terminal
+$pip freeze > requeriments.txt
+$pip install -r requirements.txt
+```
+
 ## Arquitectura
 
 **Vistas:** 

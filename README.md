@@ -1,7 +1,7 @@
 # AsesorateSAS
 Proyecto de ingeniería de requisitos, de un software para asesorías académicas
 
-Para instalar las dependencias del proyecto la primera vez que se ejecuta:
+Para instalar las dependencias del proyecto en la terminal o CMD, la primera vez que se ejecuta:
 ```Terminal
 $pip freeze > requeriments.txt
 $pip install -r requirements.txt

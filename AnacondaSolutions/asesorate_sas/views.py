@@ -3,14 +3,17 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 
 #importar los modelos creados
-from AnacondaSolutions.asesorate_sas.models import Estudiante
-from AnacondaSolutions.asesorate_sas.serializers import EstudianteSerializer
+from AnacondaSolutions.asesorate_sas.models import Estudiante, Cotizacion
+from AnacondaSolutions.asesorate_sas.serializers import EstudianteSerializer,CotizacionSerializer
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.views import APIView
+from rest_framework.renderers import JSONRenderer
 
 #EstudianteSerializer
 from AnacondaSolutions.asesorate_sas.serializers import UserSerializer, GroupSerializer,EstudianteSerializer
 from rest_framework.response import Response
+from django.http import HttpResponse
+from django.shortcuts import render
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -46,5 +49,20 @@ class EstudianteViewSet(APIView):
         return redirect('RegistroUsuario')
 
 
+#Cotizar
 
+def cotizarForm(req):
+    return render(req, 'cotizar.html')
+
+def cotizar(req):
+    body = req.POST
+    cotizacion = Cotizacion(
+        id_estudiante = body['id_estudiante'],
+        horas = body['horas'],
+        id_categoria = body['id_categoria']
+    )
+    cotizacion.save()
+    cotizacionSerializada = CotizacionSerializer(cotizacion)
+    json = JSONRenderer().render(cotizacionSerializada.data)
+    return HttpResponse(json)
 

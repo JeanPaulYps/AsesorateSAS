@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+{% load rest_framework %}
+
+<html><body>
+
+<h1>Estudiante - {{ estudiante.nombre }}</h1>
+
+<form action="{% url 'RegistroUsuario' pk=estudiante.pk %}" method="POST">
+   {% csrf_token %}
+
+   {% render_form serializer %}
+   <input type="submit" value="Confirmar registro">
+</form>
+
+</body></html>
+
+

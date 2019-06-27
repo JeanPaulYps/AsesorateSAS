@@ -18,10 +18,17 @@ from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 
 #donde se configuran las vistas que se van creando
-from AnacondaSolutions.asesorate_sas.views import UserViewSet,GroupViewSet
+from AnacondaSolutions.asesorate_sas.views import UserViewSet,GroupViewSet,cotizarForm,cotizar
 router = DefaultRouter()
 
 #Para ir registrando cada vista creada
 router.register('usuarios', UserViewSet)
 router.register('grupos', GroupViewSet)
-urlpatterns = router.urls
+
+urlpatterns = [
+     #COTIZAR
+    path('cotizarForm/', cotizarForm, name = 'cotizarForm'),
+    path('cotizar/', cotizar, name = 'cotizar')
+]
+
+urlpatterns += router.urls

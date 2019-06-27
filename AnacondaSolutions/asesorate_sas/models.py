@@ -21,3 +21,12 @@ class Cotizacion(models.Model):
             'SA2':60000
         }
         return self.horas*VALOR_HORA[self.id_categoria]
+        
+class Estudiante(models.Model):
+    nombre = models.CharField(max_length = 150)
+    cedula = models.IntegerField(max_length = 150)
+    correo = models.EmailField(max_length = 150)
+    contraseña = models.CharField(max_length = 150)
+    telefono = models.IntegerField(max_length = 150)
+    direccion = models.CharField(max_length = 150)
+    usuario = models.CharField(max_length = 150)

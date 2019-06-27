@@ -1,0 +1,12 @@
+.form-signin{
+    display: inline-block;
+    width: 100%;
+    max-width: 22em;
+    background-color: aliceblue;
+    padding: 1em;
+    border-radius: 10px;
+}
+.signin{
+    text-align: center;
+    margin-top: 10%;
+}

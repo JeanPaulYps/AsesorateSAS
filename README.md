@@ -1,6 +1,12 @@
 # AsesorateSAS
 Proyecto de ingeniería de requisitos, de un software para asesorías académicas
 
+Para instalar las dependencias del proyecto en la terminal o CMD, la primera vez que se ejecuta:
+```Terminal
+$pip freeze > requeriments.txt
+$pip install -r requirements.txt
+```
+
 ## Arquitectura
 
 **Vistas:** 
@@ -13,11 +19,6 @@ Proyecto de ingeniería de requisitos, de un software para asesorías académica
  
 **Codificación**
  - PEP8 Estandar
- 
-**Base de datos**
-  - MySQL
-  - **Usuario**: admin-admin
-  - **Nombre base de datos**:asesorate_sas
  
 
 **Vistas:** 

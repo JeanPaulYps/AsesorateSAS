@@ -20,5 +20,10 @@ class EstudianteSerializer(serializers.ModelSerializer):
         model = Estudiante
         fields = (nombre,cedula,correo,contraseña,telefono,direccion,usuario)
 
+class CotizacionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Cotizacion
+        fields = ('id_estudiante','horas','id_categoria','precio')
+
 
    

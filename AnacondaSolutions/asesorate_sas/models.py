@@ -5,7 +5,6 @@ from computed_property import ComputedTextField
 # Create your models here.
 
 #MODELO COTIZACIÓN
-#MODELO COTIZACIÓN
 class Cotizacion(models.Model):
     id = models.AutoField(primary_key=True)
     id_estudiante = models.IntegerField(null= False)

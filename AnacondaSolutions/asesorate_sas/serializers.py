@@ -2,7 +2,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 #importar los modelos creados
-#from servi.express.models import 
+from AnacondaSolutions.asesorate_sas.models import Estudiante
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -14,6 +14,11 @@ class GroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = Group
         fields = ('url', 'name')
+        
+class EstudianteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Estudiante
+        fields = (nombre,cedula,correo,contraseña,telefono,direccion,usuario)
 
 
    

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AsesorateSAS</title>
 </head>
+<script>localStorage.setItem('id_estudiante',1)</script>
 <body>
     <form>
         {% csrf_token %}
@@ -25,10 +26,9 @@
         <button type="submit">Cotizar</button>
     </form>
 
-    <div style="visibility: hidden" id="cotizacion">
+    <div style="visibility: hidden" id="resultado">
         <h3>El precio de su cotización es:</h3>
-        <strong name="cotizacion" style="color: limegreen"></strong>
-
+        <input id="cotizacion" type="text" disabled>
     </div>
 
     <table>
@@ -56,21 +56,9 @@ $("form").submit(function(event) {
       },
       dataType: "json",
         success: function (response, request) {
-            console.log(response)
-        $.ajax({
-            url: '../getCotizacion/' + response.cotizacion.id,
-            type: 'GET',
-            dataType: 'json',
-            success: function (response, request) {
-                
-                var precio = response.precio
-                jQuery("[name=cotizacion]").val() = precio;
-                jQuery("[id=cotizacion]").css("visibility",'visible')
-        },
-        error: function(jqXHR, textStatus, errorThrown){
-          console.log(errorThrown)
-      }
-    })
+            
+            document.getElementById("cotizacion").value = response.precio.toString();
+            jQuery("[id=resultado]").css("visibility",'visible')
     },
     error: function(jqXHR, textStatus, errorThrown){
         console.log(textStatus)
@@ -79,4 +67,12 @@ $("form").submit(function(event) {
   });
 }); 
 </script>
+<style>
+    #cotizacion{
+        border:none;
+        color: limegreen;
+        font-weight: bold;
+        background: inherit;
+    }
+</style>
 </html>

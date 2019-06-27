@@ -79,6 +79,9 @@ TEMPLATES = [
         },
     },
 ]
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'AnacondaSolutions.asesorate_sas.frontend/'),
+)
 
 WSGI_APPLICATION = 'AnacondaSolutions.wsgi.application'
 

@@ -1,0 +1,10 @@
+.form-signin{
+    position: absolute;
+    width: 100%;
+    max-width: 350px;
+    left: 40%;
+    top: 20em;
+    background-color: aliceblue;
+    padding: 1em;
+    border-radius: 10px;
+}

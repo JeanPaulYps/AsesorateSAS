@@ -8,8 +8,14 @@
 ## Estructura de carpetas
 
 * frontend  (todo el frontend)
-    + styles (estilos de css y Bootstrap)
-    + function (scrips de Javascript)
+    + styles (carpeta de estilos de css y Bootstrap)
+        + style1.css
+        + style2.css
+        + style3.css
+    + function (carpeta de scrips de Javascript)
+        + script1.js
+        + script2.js
+        + script3.js
     + vista1.html
     + vista2.html
     + vista3.html

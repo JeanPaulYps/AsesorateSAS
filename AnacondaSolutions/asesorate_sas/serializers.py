@@ -18,7 +18,7 @@ class GroupSerializer(serializers.ModelSerializer):
 class EstudianteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Estudiante
-        fields = (nombre,cedula,correo,contraseña,telefono,direccion,usuario)
+        fields = ('nombre','cedula','correo','contraseña','telefono','direccion','usuario')
 
 class CotizacionSerializer(serializers.ModelSerializer):
     class Meta:

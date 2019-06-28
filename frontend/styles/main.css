@@ -1,0 +1,6 @@
+body{
+    background-color: grey;
+}
+.barra-principal{
+    display: inline-flex;
+}

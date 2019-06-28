@@ -7,7 +7,7 @@
 
 ## Estructura de carpetas
 
-**Eejemplo de la estructura de carpetas y archivos**
+**Ejemplo de la estructura de carpetas y archivos**
 
 * frontend  (todo el frontend)
     + styles (carpeta de estilos de css y Bootstrap)

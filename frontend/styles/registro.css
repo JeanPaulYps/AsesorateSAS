@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+.formulario{
+    font-family: "Montserrat",sans-serif;
+    font-weight: 500;
+    border-color: grey;
+    border-radius: 7px;
+    border-width: 3px;
+}

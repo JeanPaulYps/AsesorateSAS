@@ -27,7 +27,7 @@ $pip install -r requirements.txt
  - Javascript
  
 **Controlador**
- - Python 3 Django
+ - PHP
  
  
 **Codificación**

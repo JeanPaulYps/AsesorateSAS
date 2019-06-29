@@ -14,24 +14,14 @@ $pip install -r requirements.txt
  - CSS
  - Javascript
  
-**Controlador**
- - Python 3 Django
  
 **Codificación**
  - PEP8 Estandar
  
 
-**Vistas:** 
- - HTML
- - CSS
- - Javascript
- 
 **Controlador**
- - PHP
+ - PHP Laravel
  
- 
-**Codificación**
- - PEP8 Estandar
  
 **Base de datos**
 - PostgreSQL

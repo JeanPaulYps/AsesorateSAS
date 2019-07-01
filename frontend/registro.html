@@ -27,7 +27,7 @@
             <input type="text" name="telefono" id="teléfono" placeholder="Teléfono" required>
             <br>
             <div class="botones">
-                <a href="http://htmlpreview.github.io/?https://github.com/yesjeanpaul/AsesorateSAS/blob/master/frontend/index.html">Cancelar</a>
+                <a href="index.html">Cancelar</a>
                 <button type="submit" id="confirmar">Confirmar registro</button>
                 <br>
                 <p id='mensaje' style="visibility: hidden;font-size: 15px;color:green">Usuario registrado correctamente.</p>
@@ -41,7 +41,7 @@
      
     script.src = '//code.jquery.com/jquery-1.11.0.min.js';
     document.getElementsByTagName('head')[0].appendChild(script); 
-    
+
   $("form").submit(function(event) {
     event.preventDefault();
     var nombre = jQuery("[name=nombre]").val();

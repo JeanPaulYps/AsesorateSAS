@@ -14,7 +14,7 @@
                 <input type="text" name="cedula" id="cedula" placeholder="Cédula" required>
                 <br>
                 <input type="email" onblur="validarCorreo()" name="email" id="correo" placeholder="Correo" required>
-                <p name='cvalidador' style="visibility: hidden;font-size: 15px;color:red">Éste correo ya se encuentra registrado</p>
+                <p name='cvalidador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Éste correo ya se encuentra registrado</p>
                 <br>
                 <input type="password" name="contrasena" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}"
                                                                                                   title="La contraseña debe tener de 6 a 16 dígitos y debe contener: letras mayúsculas, minúsculas y almenos un número"
@@ -24,7 +24,7 @@
                                                                                                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}"
                                                                                                         title="La contraseña debe tener de 6 a 16 dígitos y debe contener: letras mayúsculas, minúsculas y almenos un número"
                                                                                                         required>
-                <p name='validador' style="visibility: hidden;font-size: 15px;color:red">Las contraseñas no coinciden</p>
+                <p name='validador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Las contraseñas no coinciden</p>
                 <br>
                 <input type="text" name="telefono" id="teléfono" placeholder="Teléfono" required>
                 <br>
@@ -89,9 +89,11 @@ function validarContrasenas(){
 
     if (contrasena==vcontrasena){
         validador.css('visibility','hidden')
+        validador.css('position','absolute')
         btnConfirmar.disabled = false
         return true;
     }else{
+        validador.css('position','relative')
         validador.css('visibility','visible')
         btnConfirmar.disabled = true
         return false;
@@ -120,9 +122,11 @@ function validarCorreo(){
         .then(res =>{
             if (res.message){
                 validador.css('visibility','hidden')
+                validador.css('position','absolute')
                 btnConfirmar.disabled = false
                 return true;
             }else{
+                validador.css('position','relative')
                 validador.css('visibility','visible')
                 btnConfirmar.disabled = true
                 return false;

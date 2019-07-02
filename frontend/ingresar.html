@@ -3,13 +3,14 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <title>AsesorateSAS</title>
         <link rel="stylesheet" type="text/css" href="styles/registro.css">
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     </head>
     <body>
         <h1>Ingrese sus datos de usuario</h1>
-        <form action="" target="_blank" method="get">
-            <input type="text" id="nombre" placeholder="Nombre">
+        <form action="" id="form" method="get">
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
             <br>
-            <input type="password" id="contraseña" placeholder="Contraseña">
+            <input type="password" id="contrasena" name="password" placeholder="Contraseña" required>
             <br>
             <div class="botones">
                 <a href="index.html">Cancelar</a>
@@ -18,4 +19,30 @@
             </div>
         </form>
     </body>
+    <script>
+        $("form").submit(function(event) {
+            event.preventDefault();
+            var nombre = jQuery("[name=nombre]").val();
+            var password = jQuery("[name=password]").val();
+            fetch('http://127.0.0.1:8000/api/logged', {
+                headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json, text-plain, */*"
+                },
+                method: 'post',
+                credentials: "same-origin",
+                body: JSON.stringify({
+                    nombre: nombre,
+                    password: password
+                })
+            })
+            .then((data) => data.json())
+                .then(res =>{
+                    console.log(res);
+                })
+                .catch(function(error){
+                    console.log(error);
+                });
+        });
+    </script>
 </html>

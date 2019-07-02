@@ -26,6 +26,7 @@ body{
 			box-sizing:border-box;
 }
 
+
 *:focus {
 	outline:0;
 }
@@ -105,6 +106,7 @@ form .required {
 }
 
 form .field {
+	color : black;
 	margin-top:10px; 
 	margin-bottom:15px;
 }

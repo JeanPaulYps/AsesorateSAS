@@ -5,7 +5,7 @@ body{
     font-weight: 500;
     font-size: 1em;
 }
-.ingreso{
+.ingreso,.registro{
     font-family: "Montserrat",sans-serif;
     font-weight: 500;
     background-color: white;

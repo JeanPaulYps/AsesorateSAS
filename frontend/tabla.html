@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" type="text/css" href="styles/vista.css">
 <link rel="stylesheet" type="text/css" href="styles/registro.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
@@ -260,10 +260,11 @@ $(document).ready(function(){
 </head>
 <body>
 		<header>
-				<h1>Asesorate S.A.S</h1>
+				<b><h1 style="font-weight: 500;">Asesorate S.A.S</h1></b>
 				<ul class="enlaces">
-					<li><a href="tabla.html">Tutores</a></li>
-					<li><a href="index.html">Salir</a></li>
+					<br>
+					<li ><a href="tabla.html" style="font-weight: 500;">Tutores</a></li>
+					<li><a href="index.html" style="font-weight: 500;">Salir</a></li>
 				</ul>
 			</header>
 			<div class="container">
@@ -274,7 +275,8 @@ $(document).ready(function(){
 									<h2>Gestor de  <b>Tutores</b></h2>
 								</div>
 								<div class="col-sm-6">
-									<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar tutor</span></a>				
+									<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar tutor</span></a>
+									<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Borrar todo</span></a>						
 								</div>
 							</div>
 						</div>
@@ -529,4 +531,4 @@ $(document).ready(function(){
 				</div>
 	
 </body>
-</html> 
+</html>   

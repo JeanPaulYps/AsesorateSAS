@@ -37,7 +37,7 @@
             event.preventDefault();
             var correo = jQuery("[name=correo]").val();
             var password = jQuery("[name=password]").val();
-            fetch('http://127.0.0.1:8000/api/logged', {
+            fetch('https://fathomless-mesa-60059.herokuapp.com/api/logged', {
                 headers: {
                     "Content-Type": "application/json",
                     "Accept": "application/json, text-plain, */*"

@@ -109,6 +109,7 @@ form .field {
 	color : black;
 	margin-top:10px; 
 	margin-bottom:15px;
+	margin-left: 130px;
 }
 
 form .field:first-child {

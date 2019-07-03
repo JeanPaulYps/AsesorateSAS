@@ -43,17 +43,18 @@ function validarContrasenas(){
     var validador = jQuery("[name=validador]");
     var btnConfirmar= document.querySelector("#confirmar")
 
-
-    if (contrasena==vcontrasena){
-        validador.css('visibility','hidden')
-        validador.css('position','absolute')
-        btnConfirmar.disabled = false
-        return true;
-    }else{
-        validador.css('position','relative')
-        validador.css('visibility','visible')
-        btnConfirmar.disabled = true
-        return false;
+    if(vcontrasena!=""){
+        if (contrasena==vcontrasena){
+            validador.css('visibility','hidden')
+            validador.css('position','absolute')
+            btnConfirmar.disabled = false
+            return true;
+        }else{
+            validador.css('position','relative')
+            validador.css('visibility','visible')
+            btnConfirmar.disabled = true
+            return false;
+        }
     }
 
 }

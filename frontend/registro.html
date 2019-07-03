@@ -25,7 +25,7 @@
                 <input type="email" onblur="validarCorreo()" name="email" id="correo" placeholder="Correo" required>
                 <p name='cvalidador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Éste correo ya se encuentra registrado</p>
                 <br>
-                <input type="password" name="contrasena" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}"
+                <input type="password" name="contrasena" onblur="validarContrasenas()" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}"
                                                                                                   title="La contraseña debe tener de 6 a 16 dígitos y debe contener: letras mayúsculas, minúsculas y almenos un número"
                                                                                                   required>
                 <br>

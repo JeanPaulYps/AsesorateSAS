@@ -218,7 +218,7 @@ function indexInClass(node,myClass) {
 }
 
 function validarCorreo(){
-    var email = jQuery("[name=email]").val();
+    var email = jQuery("[name=aemail]").val();
     var validador = jQuery("[name=cvalidador]");
     var btnConfirmar= document.querySelector("#confirmar")
     btnConfirmar.disabled = true
@@ -255,7 +255,7 @@ function validarCorreo(){
 }
 
 function validarCedula(){
-    var cedula = jQuery("[name=cedula]").val();
+    var cedula = jQuery("[name=acedula]").val();
     var validador = jQuery("[name=ccvalidador]");
     var btnConfirmar= document.querySelector("#confirmar")
     btnConfirmar.disabled = true

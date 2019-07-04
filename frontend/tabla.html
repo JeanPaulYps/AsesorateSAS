@@ -208,7 +208,7 @@ body {
     }
     /* Modal styles */
     .modal .modal-dialog {
-        max-width: 400px;
+        max-width: 800px;
     }
     .modal .modal-header, .modal .modal-body, .modal .modal-footer {
         padding: 20px 30px;
@@ -378,7 +378,7 @@ body {
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                            <input type="submit" class="btn btn-success" value="Agregar">
+                            <input type="submit" class="btn btn-info" value="Guardar">
                         </div>
                         <p id='amensaje' style="visibility: hidden;font-size: 15px;color:green">Tutor registrado correctamente.</p>
                         <p id='amensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al registrar el tutor.</p>
@@ -395,7 +395,7 @@ body {
                             <h4 class="modal-title">Editar tutor</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body" style="width:50%; float:left;">
                             <div class="form-group">
                                 <label>Nombre</label>
                                 <input type="text" name="mnombre" class="form-control" required>
@@ -416,6 +416,8 @@ body {
                                 <label>Área</label>
                                 <input type="text" name="marea" class="form-control" required>
                             </div>
+                        </div>
+                        <div class="modal-body" style="width:50%; float:left;">
                             <div class="form-group">
                                 <label>Porcentaje</label>
                                 <input type="text" name="mporcentaje" class="form-control" required>

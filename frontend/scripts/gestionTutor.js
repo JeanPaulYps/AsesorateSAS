@@ -254,6 +254,44 @@ function validarCorreo(){
         });
 }
 
+function validarCorreoModificar(){
+    var correo = jQuery("[name=mcorreo]").val();
+    var cedula = jQuery("[name=mcedula]").val();
+    var validador = jQuery("[name=mcvalidador]");
+    var btnConfirmar= document.querySelector("#mconfirmar")
+    btnConfirmar.disabled = true
+
+    fetch('https://fathomless-mesa-60059.herokuapp.com/api/verificarCorreoModificar', {
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text-plain, */*"
+        },
+        method: 'post',
+        credentials: "same-origin",
+        body: JSON.stringify({
+            correo: correo,
+            cedula: cedula
+        })
+    })
+        .then((data) => data.json())
+        .then(res =>{
+            if (res.message){
+                validador.css('visibility','hidden')
+                validador.css('position','absolute')
+                btnConfirmar.disabled = false
+                return true;
+            }else{
+                validador.css('position','relative')
+                validador.css('visibility','visible')
+                btnConfirmar.disabled = true
+                return false;
+            }
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+}
+
 function validarCedula(){
     var cedula = jQuery("[name=acedula]").val();
     var validador = jQuery("[name=ccvalidador]");

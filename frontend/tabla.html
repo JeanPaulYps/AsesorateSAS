@@ -408,7 +408,8 @@ body {
                             </div>
                             <div class="form-group">
                                 <label>Correo</label>
-                                <input type="email" name="mcorreo" class="form-control" required>
+                                <input type="email" name="mcorreo" onblur="validarCorreoModificar()" class="form-control" required>
+                                <p name='mcvalidador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Éste correo ya se encuentra registrado</p>
                             </div>
                             <div class="form-group">
                                 <label>Teléfono</label>
@@ -451,7 +452,7 @@ body {
                         </div>                                                 
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                            <input type="submit" class="btn btn-info" value="Guardar">
+                            <input type="submit" id="mconfirmar" class="btn btn-info" value="Guardar">
                         </div>
                         <p id='mmensaje' style="visibility: hidden;font-size: 15px;color:green">Tutor modificado correctamente.</p>
                         <p id='mmensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al modificar el tutor.</p>

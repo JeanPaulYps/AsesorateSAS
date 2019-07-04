@@ -1,41 +1,38 @@
-        $("form").submit(function(event) {
-            event.preventDefault();
-            var nombre = jQuery("[name=nombre]").val();
-            var cedula = jQuery("[name=cedula]").val();
-            var email = jQuery("[name=email]").val();
-            var contrasena = jQuery("[name=contrasena]").val();
-            var telefono= jQuery("[name=telefono]").val();
-            var mensaje= document.querySelector("#mensaje")
-            var mensaje2= document.querySelector("#mensaje2")
-
-
-            fetch('https://fathomless-mesa-60059.herokuapp.com/api/registroEstudiante', {
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json, text-plain, */*"
-                },
-                method: 'post',
-                credentials: "same-origin",
-                body: JSON.stringify({
-                    nombre: nombre,
-                    cedula: cedula,
-                    correo: email,
-                    contrasena: contrasena,
-                    telefono : telefono
-                })
-            })
-                .then((data) => data.json())
-                .then(res =>{
-                    document.getElementById("form").reset();
-                    mensaje.style.visibility = 'visible'
-                })
-                .catch(function(error) {
-                    document.getElementById("form").reset();
-                    mensaje2.style.visibility = 'visible'
-                    console.log(error);
-                });
+$("form").submit(function(event) {
+    event.preventDefault();
+    var nombre = jQuery("[name=nombre]").val();
+    var cedula = jQuery("[name=cedula]").val();
+    var email = jQuery("[name=email]").val();
+    var contrasena = jQuery("[name=contrasena]").val();
+    var telefono= jQuery("[name=telefono]").val();
+    var mensaje= document.querySelector("#mensaje")
+    var mensaje2= document.querySelector("#mensaje2")    
+    fetch('https://fathomless-mesa-60059.herokuapp.com/api/registroEstudiante', {
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text-plain, */*"
+        },
+        method: 'post',
+        credentials: "same-origin",
+        body: JSON.stringify({
+            nombre: nombre,
+            cedula: cedula,
+            correo: email,
+            contrasena: contrasena,
+            telefono : telefono
+        })
+    })
+        .then((data) => data.json())
+        .then(res =>{
+            document.getElementById("form").reset();
+            mensaje.style.visibility = 'visible'
+        })
+        .catch(function(error) {
+            document.getElementById("form").reset();
+            mensaje2.style.visibility = 'visible'
+            console.log(error);
         });
-
+});
 
 function validarContrasenas(){
     var contrasena = jQuery("[name=contrasena]").val();

@@ -1,3 +1,5 @@
+<script src="scripts/validarSesion.js"></script>
+<script>sesion('Administrador')</script>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -269,7 +271,7 @@ body {
             <ul class="enlaces">
 
                 <li ><a href="tabla.html" style="font-weight: 500;">Tutores</a></li>
-                <li><a href="index.html" style="font-weight: 500;">Salir</a></li>
+                <li><button style="font-weight: 500;" onclick="cerrarSesion();">Salir</button></li>
             </ul>
         </header>
         <div class="container">
@@ -296,73 +298,7 @@ body {
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-
-                            <td>Thomas Hardy</td>
-                            <td>thomashardy@mail.com</td>
-                            <td>89 Chiaroscuro Rd, Portland, USA</td>
-                            <td>(171) 555-2222</td>
-                            <td>89 Chiaroscuro Rd, Portland, USA</td>
-                            <td>(171) 555-2222</td>
-                            <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Borrar">&#xE872;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-
-                            <td>Dominique Perrier</td>
-                            <td>dominiqueperrier@mail.com</td>
-                            <td>Obere Str. 57, Berlin, Germany</td>
-                            <td>(313) 555-5735</td>
-                            <td>89 Chiaroscuro Rd, Portland, USA</td>
-                            <td>(171) 555-2222</td>
-                            <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Borrar">&#xE872;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-
-                            <td>Maria Anders</td>
-                            <td>mariaanders@mail.com</td>
-                            <td>25, rue Lauriston, Paris, France</td>
-                            <td>(503) 555-9931</td>
-                            <td>25, rue Lauriston, Paris, France</td>
-                            <td>(503) 555-9931</td>
-
-                            <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Borrar">&#xE872;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-
-                            <td>Fran Wilson</td>
-                            <td>franwilson@mail.com</td>
-                            <td>C/ Araquil, 67, Madrid, Spain</td>
-                            <td>(204) 619-5731</td>
-                            <td>89 Chiaroscuro Rd, Portland, USA</td>
-                            <td>(171) 555-2222</td>
-                            <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Borrar">&#xE872;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-
-                            <td>Martin Blank</td>
-                            <td>martinblank@mail.com</td>
-                            <td>Via Monte Bianco 34, Turin, Italy</td>
-                            <td>(480) 631-2097</td>
-                            <td>25, rue Lauriston, Paris, France</td>
-                            <td>(503) 555-9931</td>
-                            <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Borrar">&#xE872;</i></a>
-                            </td>
-                        </tr>
+                    <tbody id="tbody">
                     </tbody>
                 </table>
                 <!-- <div class="clearfix">
@@ -383,7 +319,7 @@ body {
         <div id="addEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form>
+                    <form id="aform">
                         <div class="modal-header">
                             <h4 class="modal-title">Agregar tutor</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -391,51 +327,51 @@ body {
                         <div class="modal-body" style="width:50%; float:left;">
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="anombre" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Cédula</label>
-                                <input type="email" class="form-control" required>
+                                <input type="text" name="acedula" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Correo</label>
-                                <input type="text" class="form-control" required>
+                                <input type="email" name="acorreo" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Teléfono</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="atelefono" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Área</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="aarea" class="form-control" required>
                             </div>
                         </div>
                         <div class="modal-body" style="width:50%; float:left;">
                             <div class="form-group">
                                 <label>Porcentaje</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="aporcentaje" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Banco</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="abanco" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Tipo de cuenta</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="atipo_cuenta" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Número de cuenta</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="anumero_cuenta" class="form-control" required>
                             </div>
                             <div class = "form-group">
-                                <label for="id_categoria">Nivel</label>
+                                <label for="anivel">Nivel</label>
                                 <div class="inputs">
-                                    <select class="aweform" id="subject" name="subject">
-                                        <option value='JR'>JUNIOR</option>
-                                        <option value='SB'>SENIOR BASIC</option>
-                                        <option value='SM'>SENIOR MEDIUM</option>
-                                        <option value='SA1'>SENIOR ADVANCED 1</option>
-                                        <option value='SA2'>SENIOR ADVANCED 2</option>
+                                    <select class="aweform" id="subject" name="anivel">
+                                        <option value='JUNIOR'>JUNIOR</option>
+                                        <option value='SENIOR BASIC'>SENIOR BASIC</option>
+                                        <option value='SENIOR MEDIUM'>SENIOR MEDIUM</option>
+                                        <option value='SENIOR ADVANCED 1'>SENIOR ADVANCED 1</option>
+                                        <option value='SENIOR ADVANCED 2'>SENIOR ADVANCED 2</option>
                                     </select>
                                 </div>
                             </div>
@@ -444,6 +380,8 @@ body {
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
                             <input type="submit" class="btn btn-success" value="Agregar">
                         </div>
+                        <p id='amensaje' style="visibility: hidden;font-size: 15px;color:green">Tutor registrado correctamente.</p>
+                        <p id='amensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al registrar el tutor.</p>
                     </form>
                 </div>
             </div>
@@ -452,7 +390,7 @@ body {
         <div id="editEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form>
+                    <form id="mform">
                         <div class="modal-header">
                             <h4 class="modal-title">Editar tutor</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -460,49 +398,49 @@ body {
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="mnombre" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Cédula</label>
-                                <input type="email" class="form-control" required>
+                                <input type="text" name="mcedula" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Correo</label>
-                                <input type="text" class="form-control" required>
+                                <input type="email" name="mcorreo" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Teléfono</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="mtelefono" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Área</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="marea" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Porcentaje</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="mporcentaje" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Banco</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="mbanco" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Tipo de cuenta</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="mtipo_cuenta" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Número de cuenta</label>
-                                <input type="text" class="form-control" required>
+                                <input type="text" name="mnumero_cuenta" class="form-control" required>
                             </div>
                             <div class = "form-group">
-                                <label for="id_categoria">Nivel</label>
+                                <label for="mnivel">Nivel</label>
                                 <div class="inputs">
-                                    <select class="aweform" id="subject" name="subject">
-                                        <option value='JR'>JUNIOR</option>
-                                        <option value='SB'>SENIOR BASIC</option>
-                                        <option value='SM'>SENIOR MEDIUM</option>
-                                        <option value='SA1'>SENIOR ADVANCED 1</option>
-                                        <option value='SA2'>SENIOR ADVANCED 2</option>
+                                    <select class="aweform" id="subject" name="mnivel">
+                                        <option value='JUNIOR'>JUNIOR</option>
+                                        <option value='SENIOR BASIC'>SENIOR BASIC</option>
+                                        <option value='SENIOR MEDIUM'>SENIOR MEDIUM</option>
+                                        <option value='SENIOR ADVANCED 1'>SENIOR ADVANCED 1</option>
+                                        <option value='SENIOR ADVANCED 2'>SENIOR ADVANCED 2</option>
                                     </select>
                                 </div>
                             </div>
@@ -511,6 +449,8 @@ body {
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
                             <input type="submit" class="btn btn-info" value="Guardar">
                         </div>
+                        <p id='mmensaje' style="visibility: hidden;font-size: 15px;color:green">Tutor registrado correctamente.</p>
+                        <p id='mmensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al registrar el tutor.</p>
                     </form>
                 </div>
             </div>
@@ -519,7 +459,7 @@ body {
         <div id="deleteEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form>
+                    <form id="bform">
                         <div class="modal-header">
                             <h4 class="modal-title">Borrar Tutor</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -538,4 +478,5 @@ body {
         </div>
 
     </body>
+    <script src="scripts/gestionTutor.js"></script>
 </html>

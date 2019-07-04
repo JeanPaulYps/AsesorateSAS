@@ -44,7 +44,7 @@ function validarCorreo(){
     var btnConfirmar= document.querySelector("#confirmar")
     btnConfirmar.disabled = true
 
-    fetch('https://fathomless-mesa-60059.herokuapp.com/api/verificarCorreoAspirante', {
+    fetch('https://fathomless-mesa-60059.herokuapp.com/api/verificarCorreo', {
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json, text-plain, */*"
@@ -52,7 +52,45 @@ function validarCorreo(){
         method: 'post',
         credentials: "same-origin",
         body: JSON.stringify({
-            correo: email
+            correo: email,
+            modelo: 'Aspirante'
+        })
+    })
+        .then((data) => data.json())
+        .then(res =>{
+            if (res.message){
+                validador.css('visibility','hidden')
+                validador.css('position','absolute')
+                btnConfirmar.disabled = false
+                return true;
+            }else{
+                validador.css('position','relative')
+                validador.css('visibility','visible')
+                btnConfirmar.disabled = true
+                return false;
+            }
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+}
+
+function validarCedula(){
+    var cedula = jQuery("[name=cedula]").val();
+    var validador = jQuery("[name=ccvalidador]");
+    var btnConfirmar= document.querySelector("#confirmar")
+    btnConfirmar.disabled = true
+
+    fetch('https://fathomless-mesa-60059.herokuapp.com/api/verificarCedula', {
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text-plain, */*"
+        },
+        method: 'post',
+        credentials: "same-origin",
+        body: JSON.stringify({
+            cedula: cedula,
+            modelo: 'Aspirante'
         })
     })
         .then((data) => data.json())

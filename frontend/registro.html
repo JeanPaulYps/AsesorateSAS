@@ -20,7 +20,8 @@
             <form action="" id="form" target="_blank" method="get">
                 <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
                 <br>
-                <input type="text" name="cedula" id="cedula" placeholder="Cédula" required>
+                <input type="text" name="cedula" onblur="validarCedula()" id="cedula" placeholder="Cédula" required>
+                <p name='ccvalidador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Esta cedula ya se encuentra registrada</p>
                 <br>
                 <input type="email" onblur="validarCorreo()" name="email" id="correo" placeholder="Correo" required>
                 <p name='cvalidador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Éste correo ya se encuentra registrado</p>

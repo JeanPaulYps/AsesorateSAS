@@ -144,6 +144,7 @@ $("#aform").submit(function(event) {
         .then(res =>{
             document.getElementById("aform").reset();
             mensaje.style.visibility = 'visible'
+            renovarTabla()
             console.log(res)
         })
         .catch(function(error) {
@@ -193,6 +194,7 @@ $("#mform").submit(function(event) {
         .then(res =>{
             document.getElementById("mform").reset();
             mensaje.style.visibility = 'visible'
+            renovarTabla()
             console.log(res)
         })
         .catch(function(error) {

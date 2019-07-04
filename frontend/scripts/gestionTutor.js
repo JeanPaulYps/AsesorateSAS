@@ -218,7 +218,7 @@ function indexInClass(node,myClass) {
 }
 
 function validarCorreo(){
-    var email = jQuery("[name=aemail]").val();
+    var correo = jQuery("[name=acorreo]").val();
     var validador = jQuery("[name=cvalidador]");
     var btnConfirmar= document.querySelector("#confirmar")
     btnConfirmar.disabled = true
@@ -231,7 +231,7 @@ function validarCorreo(){
         method: 'post',
         credentials: "same-origin",
         body: JSON.stringify({
-            correo: email,
+            correo: correo,
             modelo: 'Tutor'
         })
     })

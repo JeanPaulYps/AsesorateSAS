@@ -62,7 +62,7 @@ a {
 
 .ajax-contact-form > .container {
 	background-color:#fff;
-	border:1px solid #bbb;
+	border:none;
 	-webkit-border-radius:6px; 
 	   -moz-border-radius:6px; 
 			border-radius:6px;

@@ -18,26 +18,27 @@
         <div class="registro">
             <h1>Crea tu cuenta en Asesorate S.A.S</h1>
             <form action="" id="form" target="_blank" method="get">
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre *" required>
                 <br>
-                <input type="text" name="cedula" onblur="validarCedula()" id="cedula" placeholder="Cédula" required>
+                <input type="text" name="cedula" onblur="validarCedula()" id="cedula" placeholder="Cédula *" required>
                 <p name='ccvalidador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Esta cedula ya se encuentra registrada</p>
                 <br>
-                <input type="email" onblur="validarCorreo()" name="email" id="correo" placeholder="Correo" required>
+                <input type="email" onblur="validarCorreo()" name="email" id="correo" placeholder="Correo *" required>
                 <p name='cvalidador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Éste correo ya se encuentra registrado</p>
                 <br>
-                <input type="password" name="contrasena" onblur="validarContrasenas()" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}"
+                <input type="password" name="contrasena" onblur="validarContrasenas()" placeholder="Contraseña *" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}"
                                                                                                   title="La contraseña debe tener de 6 a 16 dígitos y debe contener: letras mayúsculas, minúsculas y almenos un número"
                                                                                                   required>
                 <br>
-                <input type="password" name="vcontrasena" onblur="validarContrasenas()" id="contraseña" placeholder="Confirmar contraseña"
+                <input type="password" name="vcontrasena" onblur="validarContrasenas()" placeholder="Confirmar contraseña *"
                                                                                                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}"
                                                                                                         title="La contraseña debe tener de 6 a 16 dígitos y debe contener: letras mayúsculas, minúsculas y almenos un número"
                                                                                                         required>
                 <p name='validador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Las contraseñas no coinciden</p>
                 <br>
-                <input type="text" name="telefono" id="teléfono" placeholder="Teléfono" required>
+                <input type="text" name="telefono" id="teléfono" placeholder="Teléfono *" required>
                 <br>
+                <p id='mensaje' style="visibility: hidden;font-size: 8px;color:#ccc">Campos obligatorios: *</p>
                 <div class="botones">
                     <a href="index.html">Cancelar</a>
                     <button type="submit" id="confirmar">Confirmar registro</button>

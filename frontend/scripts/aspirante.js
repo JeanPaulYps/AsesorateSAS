@@ -28,11 +28,16 @@ $("form").submit(function(event) {
     })
         .then((data) => data.json())
         .then(res =>{
-            document.getElementById("form").reset();
-            mensaje.style.visibility = 'visible'
+            if (res.message == "exitoso"){
+                document.getElementById("form").reset();
+                mensaje.style.visibility = 'visible'
+                mensaje2.style.visibility = 'hidden'
+            }else{
+                throw res.message;
+            }
         })
         .catch(function(error) {
-            document.getElementById("form").reset();
+            mensaje.style.visibility = 'hidden'
             mensaje2.style.visibility = 'visible'
             console.log(error);
         });

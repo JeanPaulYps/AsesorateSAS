@@ -142,13 +142,17 @@ $("#aform").submit(function(event) {
     })
         .then((data) => data.json())
         .then(res =>{
-            document.getElementById("aform").reset();
-            mensaje.style.visibility = 'visible'
-            renovarTabla()
-            console.log(res)
+            if (res.message == "exitoso"){
+                document.getElementById("aform").reset();
+                mensaje.style.visibility = 'visible'
+                mensaje2.style.visibility = 'hidden'
+                renovarTabla()
+            }else{
+                throw res.message;
+            }
         })
         .catch(function(error) {
-            document.getElementById("aform").reset();
+            mensaje.style.visibility = 'hidden'
             mensaje2.style.visibility = 'visible'
             console.log(error);
         });
@@ -192,13 +196,17 @@ $("#mform").submit(function(event) {
     })
         .then((data) => data.json())
         .then(res =>{
-            document.getElementById("mform").reset();
-            mensaje.style.visibility = 'visible'
-            renovarTabla()
-            console.log(res)
+            if (res.message == "exitoso"){
+                document.getElementById("mform").reset();
+                mensaje.style.visibility = 'visible'
+                mensaje2.style.visibility = 'hidden'
+                renovarTabla()
+            }else{
+                throw res.message;
+            }
         })
         .catch(function(error) {
-            document.getElementById("mform").reset();
+            mensaje.style.visibility = 'hidden'
             mensaje2.style.visibility = 'visible'
             console.log(error);
         });

@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>AsesorateSAS</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <link rel="stylesheet" type="text/css" href="styles/registro.css">
+    </head>
+    <body>
+            <header>
+                    <h1>Asesorate S.A.S</h1>
+                    <ul class="enlaces">
+                        <li><a href="registro_aspirante.html">Registro aspirante</a></li>
+                        <li><a href="registro.html">Registro estudiante</a></li>
+                        <li><a href="ingresar.html">Ingresar</a></li>
+                    </ul>
+                </header>
+        <div class="registro">
+            <h1>Crea tu cuenta en Asesorate S.A.S</h1>
+            <form action="" id="form" target="_blank" method="get">
+                <input type="date" name="fecha-inicio" id="fecha-inicio" placeholder="ea" required>
+                <br>
+                <input type="date" name="fecha-fin" id="fecha-fin" required>
+                <br>
+                <input type="text" name="cedula" id="cedula" placeholder="Cédula" required>
+                <br>
+                <input type="email" onblur="validarCorreo()" name="email" id="correo" placeholder="Correo" required>
+                <p name='cvalidador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Éste correo ya se encuentra registrado</p>
+                <br>
+                <input type="password" name="contrasena" id="contraseña" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}"
+                                                                                                  title="La contraseña debe tener de 6 a 16 dígitos y debe contener: letras mayúsculas, minúsculas y almenos un número"
+                                                                                                  required>
+                <br>
+                <input type="password" name="vcontrasena" onblur="validarContrasenas()" id="contraseña" placeholder="Confirmar contraseña"
+                                                                                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,16}"
+                                                                                                        title="La contraseña debe tener de 6 a 16 dígitos y debe contener: letras mayúsculas, minúsculas y almenos un número"
+                                                                                                        required>
+                <p name='validador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Las contraseñas no coinciden</p>
+                <br>
+                <input type="text" name="telefono" id="teléfono" placeholder="Teléfono" required>
+                <br>
+                <div class="botones">
+                    <a href="index.html">Cancelar</a>
+                    <button type="submit" id="confirmar">Confirmar registro</button>
+                </div>
+                <br>
+                <p id='mensaje' style="visibility: hidden;font-size: 15px;color:green">Usuario registrado correctamente.</p>
+                <p id='mensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al registrar el usuario.</p>
+        </div>
+            </form>
+
+    </body>
+</html>
+

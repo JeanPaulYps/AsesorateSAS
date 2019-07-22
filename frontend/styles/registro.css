@@ -99,4 +99,7 @@ button > i {
 .opcion{
     margin: 1em;
 }
+#pregunta{
+    width: 90%;
+}
 

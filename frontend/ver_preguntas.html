@@ -271,9 +271,8 @@ body {
             <ul class="enlaces">
 
          <li ><a href="ver resultados.html" style="font-weight: 500;">ver resultados</a></li>
-                <li ><a href="ver preguntas.html" style="font-weight: 500;">Agregar/editar preguntas</a></li>
+                <li ><a href="ver_preguntas.html" style="font-weight: 500;">Preguntas y convocatoria</a></li>
                 <li ><a href="tabla.html" style="font-weight: 500;">Tutores</a></li>
-                <li><a href="javascript:window.open('habilitar_prueba.html', 'yourWindowName', 'width=800,height=500');">Habilitar prueba</a>
                 </li>
                 <li><button style="font-weight: 500;" onclick="cerrarSesion();">Salir</button></li>
             </ul>
@@ -287,28 +286,59 @@ body {
                         </div>
                         <div class="col-sm-6">
                             <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Agregar pregunta</span></a>
-                            <a href="#" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Habilitar prueba</span></a>
+                            <a href="#addConvocatoria" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Habilitar prueba</span></a>
                         </div>
                     </div>
                 </div>
                 <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Pregunta</th>
+                            <th>Opción A</th>
+                            <th>Opción B</th>
+                            <th>Opción C</th>
+                            <th>Opción D</th>
+                            <th>Opción correcta</th>
+                        </tr>
+                    </thead>
                     <tbody id="tbody">
                     </tbody>
                 </table>
-                <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                    <ul class="pagination">
-                    <li class="page-item disabled"><a href="#">Previous</a></li>
-                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item"><a href="#" class="page-link">4</a></li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                    </ul>
-                    </div>
             </div>
         </div>
+        <!-- Edit Modal HTML -->
+        <div id="addConvocatoria" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="fform">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Selecciones las fechas en la que se hará la prueba</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                                <br>
+                                <div class="modal-body" style="width:50%; float:left;">
+                                    <div class="form-group">
+                                        <label>Fecha de inicio</label>
+                                        <input type="date" name="fechainicio" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="modal-body" style="width:50%; float:left;">
+                                    <div class="form-group">
+                                        <label>Fecha de fin</label>
+                                        <input type="date" name="fechafin" class="form-control" required>
+                                    </div>
+                                </div>  
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                            <input type="submit" id="fconfirmar" class="btn btn-info" value="Guardar">
+                        </div>
+                        <p id='fmensaje' style="visibility: hidden;font-size: 15px;color:green">Convocatoria creada correctamente.</p>
+                        <p id='fmensaje2' style="visibility: hidden;font-size: 15px;color:red">Verifique que las fechas sean correctas.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <!-- Edit Modal HTML -->
         <div id="addEmployeeModal" class="modal fade">
             <div class="modal-dialog">
@@ -318,35 +348,42 @@ body {
                             <h4 class="modal-title">Agregar pregunta</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
-                        <div class="registro">
-                            <form action="" id="form" target="_blank" method="get">
-                                <br>
-                                <input type="text" name="pregunta" id="pregunta" placeholder="Pregunta" required>
-                                <br>
-                                <div class="opciones">
-                                    <input type="text" name="pregunta" class="opcion" id="opcion-a" placeholder="A" required>
-                                    <br>
-                                    <input type="text" name="pregunta" class="opcion" id="opcion-b" placeholder="B" required>
-                                    <br>
-                                    <input type="text" name="pregunta" class="opcion" id="opcion-c" placeholder="C" required>
-                                    <br>
-                                    <input type="text" name="pregunta" class="opcion" id="opcion-d" placeholder="D" required>
-                                    <br>
-                                </div>
-                                <br>
-                                <input type="text" name="pregunta" id="pregunta" placeholder="Respuesta correcta" required>
-                                <br>
-                                <div class="botones">
-                                    <a href="index.html">Cancelar</a>
-                                    <button type="submit" id="confirmar">Guardar</button>
-                                </div>
+                        <div class="modal-body" style="width:50%; float:left;">
+                            <div class="form-group">
+                                <label>Pregunta</label>
+                                <input type="text" name="apregunta" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Opción A</label>
+                                <input type="text" name="aopcion1" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                    <label>Opción B</label>
+                                    <input type="text" name="aopcion2" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                    <label>Opción C</label>
+                                    <input type="text" name="aopcion3" class="form-control" required>
+                            </div>
                         </div>
+                        <div class="modal-body" style="width:50%; float:left;">
+                            <div class="form-group">
+                            </div>
+                            <div class="form-group">
+                                <label>Opción D</label>
+                                <input type="text" name="aopcion4" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Opción correcta</label>
+                                <input type="text" name="aopcion_correcta" class="form-control" required>
+                            </div>
+                        </div>                                                 
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                            <input type="submit" id="confirmar" class="btn btn-info" value="Guardar">
+                            <input type="submit" id="aconfirmar" class="btn btn-info" value="Guardar">
                         </div>
-                        <p id='amensaje' style="visibility: hidden;font-size: 15px;color:green">Tutor registrado correctamente.</p>
-                        <p id='amensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al registrar el tutor.</p>
+                        <p id='amensaje' style="visibility: hidden;font-size: 15px;color:green">Pregunta agregada correctamente.</p>
+                        <p id='amensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al agregar la pregunta.</p>
                     </form>
                 </div>
             </div>
@@ -361,37 +398,37 @@ body {
                             <h4 class="modal-title">Editar pregunta</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
+                        <input type="text" style="visibility: hidden" name="mid_pregunta">
                         <div class="modal-body" style="width:50%; float:left;">
                             <div class="form-group">
                                 <label>Pregunta</label>
-                                <input type="text" name="mnombre" class="form-control" required>
+                                <input type="text" name="mpregunta" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Opción A</label>
-                                <input type="text" name="opcion-a" class="form-control" required>
+                                <input type="text" name="mopcion1" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                    <label>Opción B</label>
+                                    <input type="text" name="mopcion2" class="form-control" required>
                             </div>
                             <div class="form-group">
                                     <label>Opción C</label>
-                                    <input type="text" name="opcion-c" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                    <label>Respuesta correcta</label>
-                                    <input type="text" name="opcion-c" class="form-control" required>
+                                    <input type="text" name="mopcion3" class="form-control" required>
                             </div>
                         </div>
                         <div class="modal-body" style="width:50%; float:left;">
                             <div class="form-group">
-                                <br> <br> <br>
-                            </div>
-                            <div class="form-group">
-                                <label>Opción B</label>
-                                <input type="text" name="mbanco" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Opción D</label>
-                                <input type="text" name="mtipo_cuenta" class="form-control" required>
+                                <input type="text" name="mopcion4" class="form-control" required>
                             </div>
-                        </div>                                                 
+                            <div class="form-group">
+                                <label>Opción correcta</label>
+                                <input type="text" name="mopcion_correcta" class="form-control" required>
+                            </div>
+                        </div>                        
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
                             <input type="submit" id="mconfirmar" class="btn btn-info" value="Guardar">
@@ -425,5 +462,5 @@ body {
         </div>
 
     </body>
-    <script src="scripts/gestionTutor.js"></script>
+    <script src="scripts/gestionPreguntas.js"></script>
 </html>

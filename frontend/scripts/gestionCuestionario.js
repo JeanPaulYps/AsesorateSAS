@@ -122,7 +122,7 @@ function indexInClass(node,myClass) {
 
 
 function enviarCuestionario(timer = true){
-    if(!verificarCampos && timer){
+    if(!verificarCampos() && timer){
         alert("Debe responder todas las preguntas")
         return 1
     }

@@ -24,8 +24,8 @@ $("form").submit(function(event) {
     })
         .then((data) => data.json())
         .then(res =>{
-            document.getElementById("cotizacion").style.visibility = "visible";
-			document.getElementById("mensaje").innerHTML=res.precio;
+           // document.getElementById("cotizacion").style.visibility = "visible";
+			//document.getElementById("mensaje").innerHTML=res.precio;
            
         })
         .catch(function(error) {

@@ -88,7 +88,7 @@ $(document).on("click", ".parano", function () {
 });
 
 async function renovarTabla(){
-    await listarAspirantes
+    await verTutores()
     dibujarTabla()
     del = document.getElementsByClassName("delete")
     mod = document.getElementsByClassName("edit")

@@ -1,7 +1,7 @@
 var tutores = []
 var del = []
 var mod = []
-
+var aspirantes = []
 
 async function verTutores(){
     await fetch('https://fathomless-mesa-60059.herokuapp.com/api/verTutores', {
@@ -21,6 +21,22 @@ async function verTutores(){
         });
 }
 
+async function listarAspirantes(){
+    await fetch("https://fathomless-mesa-60059.herokuapp.com/api/verAspirantes",{
+        headers:{
+            "Content-Type":"application/json",
+            "Accept":"application/json, text-plain, */*"
+        },
+        method:'get',
+        credentials:"same-origin"
+    }).then((data) => data.json())
+    .then(res =>{
+        aspirantes = res.aspirantes;
+    })
+    .catch(function(error){
+        console.log(error);
+    })
+}
 
 async function dibujarTabla(){
     dom = ``
@@ -34,7 +50,7 @@ async function dibujarTabla(){
             <td>${tutor.nivel}</td>
             <td>
             <div class="col-sm-6">
-                <a href="#addEmployeeModal" class="btn btn-info" data-toggle="modal">Contratar</a>
+                <a href= "#addEmployeeModal" data-id=${tutor.cedula} class="btn btn-info parano" data-toggle="modal">Contratar</a>
             </div>
             </td>
             </tr>
@@ -44,8 +60,35 @@ async function dibujarTabla(){
     document.getElementById("tbody").innerHTML = dom
 }
 
+async function dibujarTabla2(){
+    dom = ``
+    aspirantes.map(
+        (aspirante)=>{
+            dom = dom + `
+            <tr>
+            <td>1</td>
+            <td>${aspirante.area}</td>
+            <td>${aspirante.estudiante_cedula}</td>
+            <td>${aspirante.nivel}</td>
+            <td>
+            <div class="col-sm-6">
+                <a href= "#addEmployeeModal" data-id=${aspirante.estudiante_cedula} class="btn btn-info parano" data-toggle="modal">Contratar</a>
+            </div>
+            </td>
+            </tr>
+            ` 
+        }
+    )
+    document.getElementById("tbody").innerHTML = dom
+}
+// para mantener la cedula del tutor
+$(document).on("click", ".parano", function () {
+    var cedula = $(this).attr("data-id");
+    localStorage.setItem("cedula_tutor", cedula);
+});
+
 async function renovarTabla(){
-    await verTutores()
+    await listarAspirantes
     dibujarTabla()
     del = document.getElementsByClassName("delete")
     mod = document.getElementsByClassName("edit")
@@ -105,21 +148,21 @@ $("#bform").submit(async function(event) {
 
 $("#aform").submit(function(event) {
     event.preventDefault();
-    var nombre = jQuery("[name=anombre]").val();
-    var cedula = jQuery("[name=acedula]").val();
-    var email = jQuery("[name=acorreo]").val();
-    var area = jQuery("[name=aarea]").val();
-    var nivel= jQuery("[name=anivel]").val();
+    // var nombre = jQuery("[name=anombre]").val();
+    console.log("Esto debe imprimir algo");
+    var cedula = localStorage.getItem("cedula_tutor");
+    // var email = jQuery("[name=acorreo]").val();
+    // var area = jQuery("[name=aarea]").val();
+    // var nivel= jQuery("[name=anivel]").val();
     var porcentaje= jQuery("[name=aporcentaje]").val();
     var banco= jQuery("[name=abanco]").val();
     var tipo_cuenta= jQuery("[name=atipo_cuenta]").val();
     var numero_cuenta= jQuery("[name=anumero_cuenta]").val();
-    var telefono= jQuery("[name=atelefono]").val();
-
-
+    console.log(cedula);
+    // var telefono= jQuery("[name=atelefono]").val();
     var mensaje= document.querySelector("#amensaje")
     var mensaje2= document.querySelector("#amensaje2");
-    fetch('https://fathomless-mesa-60059.herokuapp.com/api/registroTutor', {
+    fetch('https://fathomless-mesa-60059.herokuapp.com/api/contratarAspirante', {
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json, text-plain, */*"
@@ -127,16 +170,11 @@ $("#aform").submit(function(event) {
         method: 'post',
         credentials: "same-origin",
         body: JSON.stringify({
-            nombre: nombre,
             cedula: cedula,
-            correo: email,
-            telefono : telefono,
-            area : area,
-            nivel : nivel,
             porcentaje : porcentaje,
-            banco : banco,
+            numero_cuenta : numero_cuenta,
             tipo_cuenta : tipo_cuenta,
-            numero_cuenta : numero_cuenta
+            banco : banco
         })
     })
         .then((data) => data.json())

@@ -143,6 +143,7 @@ function enviarCuestionario(timer = true){
         method: 'post',
         credentials: "same-origin",
         body: JSON.stringify({
+            preguntas: preguntas_respondidas,
             fecha_presentacion: fecha_presentacion,
             fechaenvio: fechaenvio,
             aspirante_cedula:aspirante_cedula,

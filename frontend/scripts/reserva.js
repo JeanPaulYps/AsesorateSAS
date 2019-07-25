@@ -1,10 +1,10 @@
 $("form").submit(function(event) {
     event.preventDefault();
-    var horas = jQuery("[name=horas]").val();
-    var area = jQuery("[name=area]").val();
-    var nivel = jQuery("[name=nivel]").val();
-    var cedula_tutor = jQuery("[name=cedula_tutor]").val();
-    var cedula_estudiante = localStorage.getItem("cedula");
+    var hs = jQuery("[name=horas]").val();
+    var ar = jQuery("[name=area]").val();
+    var nv = jQuery("[name=nivel]").val();
+    var ct = jQuery("[name=cedula_tutor]").val();
+    var ce = localStorage.getItem("cedula");
     
     fetch('https://fathomless-mesa-60059.herokuapp.com/api/CrearReserva', {
         headers: {
@@ -14,16 +14,17 @@ $("form").submit(function(event) {
         method: 'post',
         credentials: "same-origin",
         body: JSON.stringify({
-            cedula_estudiante:cedula_estudiante,
-            cedula_tutor:cedula_tutor,
-            nivel:nivel,
-            area:area,
-            horas:horas
+            cedula_estudiante:ce,
+            cedula_tutor:ct,
+            nivel:nv,
+            area:ar,
+            horas:hs
             
         })
     })
         .then((data) => data.json())
         .then(res =>{
+        
            // document.getElementById("cotizacion").style.visibility = "visible";
 			//document.getElementById("mensaje").innerHTML=res.precio;
            

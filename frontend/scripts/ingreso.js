@@ -25,10 +25,13 @@ $("form").submit(function(event) {
                 localStorage.setItem("cedula",res['cedula']);
                 localStorage.setItem("pass", res['pass']);
                 if(res['rol'][0]['rol'] == 'Estudiante'){
-                    location.replace('http://www.asesorate.tk/frontend/cotizaciones.html');
+                    location.replace('http://www.asesorate.tk/frontend/estudiante.html');
                 }
                 else if(res['rol'][0]['rol'] == 'Administrador'){
                     location.replace('http://www.asesorate.tk/frontend/administrador.html');
+                }
+                else if(res['rol'][0]['rol'] == 'Aspirante'){
+                    location.replace('http://www.asesorate.tk/frontend/aspirante.html');
                 }
             }
         })

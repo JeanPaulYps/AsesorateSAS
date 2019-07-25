@@ -33,7 +33,9 @@ async function dibujarTabla(){
             <td>${tutor.cedula}</td>
             <td>${tutor.nivel}</td>
             <td>
-            <input type="submit" id="contratar" class="btn btn-info" value="Contratar">
+            <div class="col-sm-6">
+                <a href="#addEmployeeModal" class="btn btn-info" data-toggle="modal">Contratar</a>
+            </div>
             </td>
             </tr>
             ` 

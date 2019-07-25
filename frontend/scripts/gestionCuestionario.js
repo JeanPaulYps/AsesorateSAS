@@ -162,7 +162,7 @@ function enviarCuestionario(timer = true){
             }
         })
         .catch(function(error) {
-            alert(`Ocurrio un error, intente nuevamente.`)
+            alert(`Solo puede responder el cuestinario una vez cada 2 meses.`)
         });
 }
 

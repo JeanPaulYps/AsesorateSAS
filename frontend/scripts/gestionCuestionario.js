@@ -100,12 +100,13 @@ function preguntaSeleccionada(obj,opc){
 }
 
 function verificarCampos(){
+    valido = true
     preguntas_respondidas.map(pregunta=>{
         if(pregunta.respuesta==""){
-            return false
+            valido = false
         }
     })
-    return true
+    return valido
 }
 
 function indexInClass(node,myClass) {

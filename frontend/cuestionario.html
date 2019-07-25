@@ -1,3 +1,5 @@
+<script src="scripts/validarSesion.js"></script>
+ <script>sesion('Estudiante')</script>
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -10,49 +12,60 @@
         <header>
             <h1>Asesorate S.A.S</h1>
             <ul class="enlaces">
-                <li><a href="registro_aspirante.html">Registro aspirante</a></li>
-                <li><a href="registro.html">Registro estudiante</a></li>
-                <li><a href="ingresar.html">Ingresar</a></li>
+            <div id="nav">
+
+            </div>
             </ul>
         </header>
-        <div class="registro">
-            <form action="" id="form" target="_blank" method="get">
+        <div style="position: fixed;"> 
+            Tiempo ::
+            <input id="minutes" type="text" style="width: 25px; 
+                 border: none; font-size: 16px;  
+                font-weight: bold; color: black;"><font size="5"> : 
+                            </font> 
+            <input id="seconds" type="text" style="width: 40px; 
+                            border: none; font-size: 16px; 
+                            font-weight: bold; color: black;"> <br>
+                            Recuerde que solo tiene 60 minutos.
+        </div> 
+        <div id="preguntas">
+            <div class="registro">
                 <br>
                 <h3>Pregunta 1</h3>
                 <br>
                 <p>Texto pregunta</p>
                 <div class="opciones">
-                    <input type="radio" value="a1" name="181">        
+                    <input type="radio" value="A" name="181" class="opcA">        
                     <span>A) </span>
                     <span>respuesta</span>
                     <br>
                     <br>
-                    <input type="radio" value="b1" name="181">        
+                    <input type="radio" value="B" name="181" class="opcB">        
                     <span>B) </span>
                     <span>respuesta</span>
                     <br>
                     <br>
-                    <input type="radio" value="c1" name="181">        
+                    <input type="radio" value="C" name="181" class="opcC">        
                     <span>C) </span>
                     <span>respuesta</span>
                     <br>
                     <br>
-                    <input type="radio" value="d1" name="181">        
+                    <input type="radio" value="D" name="181" class="opcD">        
                     <span>D) </span>
                     <span>respuesta</span>
                     <br>
                     <br>
-                    
-                    
+ 
                 </div>
-                
-                <div class="botones">
-                    <a href="index.html">Cancelar</a>
-                    <button type="submit" id="confirmar">Enviar</button>
-                </div>
+            </div>
         </div>
-            </form>
+        <center>
+            <div class="botones">
+                <button type="submit" id="confirmar" style="background:mediumblue;cursor:pointer">Enviar</button>
+            </div>
+        </center>
 
     </body>
+    <script src="scripts/gestionCuestionario.js"></script>
 </html>
 

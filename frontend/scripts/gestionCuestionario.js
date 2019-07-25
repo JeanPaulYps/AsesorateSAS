@@ -37,6 +37,7 @@ async function dibujarTabla(){
             <br>
             <p>${pregunta.pregunta}</p>
             <div class="opciones">
+            <form>
                 <input type="radio" value="A" name="181" onclick="preguntaSeleccionada(this,'opcA')" class="opcA">        
                 <span>A) </span>
                 <span>${pregunta.opcion1}</span>
@@ -57,7 +58,7 @@ async function dibujarTabla(){
                 <span>${pregunta.opcion4}</span>
                 <br>
                 <br>
-
+            </form>
             </div>
             </div>`
             i = i+1
@@ -130,7 +131,7 @@ function enviarCuestionario(timer = true){
     var mm = today.getMonth() + 1; //January is 0!
     var yyyy = today.getFullYear();
 
-    var fecha_presentacion = `${dd}-${mm}-${yyyy}`
+    var fecha_presentacion = `${yyyy}-${mm}-${dd}`
     var fechaenvio = fecha_presentacion
     var aspirante_cedula = localStorage.getItem("cedula")
     var convocatoria_id = localStorage.getItem("convocatoria_id")

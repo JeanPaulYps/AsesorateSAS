@@ -269,10 +269,10 @@ body {
         <header>
             <h1> Asesorate S.A.S</h1>
             <ul class="enlaces">
-           <li ><a href="ver resultados.html" style="font-weight: 500;">ver resultados</a></li>
-           <li ><a href="ver_preguntas.html" style="font-weight: 500;">Preguntas y convocatoria</a></li>
-                <li ><a href="tabla.html" style="font-weight: 500;">Tutores</a></li>
-                </li>
+                    <li ><a href="ver resultados.html" style="font-weight: 500;">ver resultados</a></li>
+                    <li ><a href="ver_preguntas.html" style="font-weight: 500;">Preguntas y convocatoria</a></li>
+                    <li ><a href="tabla.html" style="font-weight: 500;">Tutores</a></li>
+                    </li>
                 <li><button style="font-weight: 500;" onclick="cerrarSesion();">Salir</button></li>
             </ul>
         </header>
@@ -319,46 +319,62 @@ body {
         </div>
         <!-- Edit Modal HTML -->
         <div id="addEmployeeModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form id="aform">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Agregar pregunta</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="registro">
-                            <form action="" id="form" target="_blank" method="get">
-                                <br>
-                                <input type="text" name="pregunta" id="pregunta" placeholder="Pregunta" required>
-                                <br>
-                                <div class="opciones">
-                                    <input type="text" name="pregunta" class="opcion" id="opcion-a" placeholder="A" required>
-                                    <br>
-                                    <input type="text" name="pregunta" class="opcion" id="opcion-b" placeholder="B" required>
-                                    <br>
-                                    <input type="text" name="pregunta" class="opcion" id="opcion-c" placeholder="C" required>
-                                    <br>
-                                    <input type="text" name="pregunta" class="opcion" id="opcion-d" placeholder="D" required>
-                                    <br>
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form id="aform">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Agregar nueva información del tutor</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body" style="width:50%; float:left;">
+                                <div class="form-group">
+                                            <label>Porcentaje</label>
+                                            <input type="text" name="aporcentaje" class="form-control" required>
                                 </div>
-                                <br>
-                                <input type="text" name="pregunta" id="pregunta" placeholder="Pregunta" required>
-                                <br>
-                                <div class="botones">
-                                    <a href="index.html">Cancelar</a>
-                                    <button type="submit" id="confirmar">Guardar</button>
+                                <div class = "form-group">
+                                    <label for="aarea">Área</label>
+                                    <div class="inputs">
+                                        <select class="form-control" id="subject" name="aarea">
+                                            <option value='Matematica'>Matematica</option>
+                                            <option value='Biologia'>Biologia</option>
+                                            <option value='Fisica'>Fisica</option>
+                                            <option value='Quimica'>Quimica</option>
+                                            <option value='Estadistica'>Estadistica</option>
+                                            <option value='Calculo'>Calculo</option>
+                                            <option value='Programacion'>Programacion</option>
+                                        </select>
+                                    </div>
                                 </div>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                            <input type="submit" id="confirmar" class="btn btn-info" value="Guardar">
-                        </div>
-                        <p id='amensaje' style="visibility: hidden;font-size: 15px;color:green">Tutor registrado correctamente.</p>
-                        <p id='amensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al registrar el tutor.</p>
-                    </form>
+                            </div>
+                            <div class="modal-body" style="width:50%; float:left;">
+                                <div class="form-group">
+                                    <label>Banco</label>
+                                    <input type="text" name="abanco" class="form-control" required>
+                                </div>
+                                <div class = "form-group">
+                                    <label for="atipo_cuenta">Tipo de cuenta</label>
+                                    <div class="inputs">
+                                        <select class="form-control" id="subject" name="atipo_cuenta" required>
+                                            <option value='Corriente'>Corriente</option>
+                                            <option value='Ahorros'>Ahorros</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Número de cuenta</label>
+                                    <input type="text" name="anumero_cuenta" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                                <input type="submit" id="confirmar" class="btn btn-info" value="Guardar">
+                            </div>
+                            <p id='amensaje' style="visibility: hidden;font-size: 15px;color:green">Tutor registrado correctamente.</p>
+                            <p id='amensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al registrar el tutor.</p>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
         
         <!-- Edit Modal HTML -->
         <div id="editEmployeeModal" class="modal fade">

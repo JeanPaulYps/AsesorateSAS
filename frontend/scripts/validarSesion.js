@@ -6,7 +6,6 @@ if (!(cedula && pass)){
 }
 
 function sesion(rol){
-    disponible = false
     fetch('https://fathomless-mesa-60059.herokuapp.com/api/verificarSesion', {
     headers: {
         "Content-Type": "application/json",
@@ -30,7 +29,7 @@ function sesion(rol){
     .catch(function(error) {
         console.log(error);
     });
-    dibujarNav(disponible)
+    
 }
 
 function cerrarSesion(){

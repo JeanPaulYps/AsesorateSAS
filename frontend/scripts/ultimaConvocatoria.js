@@ -11,7 +11,7 @@ function convocatoriaDisponible(){
         .then(res =>{
             if(res.message=="exitoso"){
                 localStorage.setItem("convocatoria_id",res.convocatoria[0].id)
-                disponible = true
+                dibujarNav(true)
             }else{
                 throw res.message;
             }

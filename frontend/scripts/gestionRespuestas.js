@@ -2,7 +2,6 @@ var tutores = []
 var del = []
 var mod = []
 var aspirantes = []
-
 async function verTutores(){
     await fetch('https://fathomless-mesa-60059.herokuapp.com/api/verTutores', {
         headers: {
@@ -54,7 +53,7 @@ async function dibujarTabla(){
             </div>
             </td>
             </tr>
-            ` 
+            `
         }
     )
     document.getElementById("tbody").innerHTML = dom
@@ -64,19 +63,20 @@ async function dibujarTabla2(){
     dom = ``
     aspirantes.map(
         (aspirante)=>{
+            nivel = getNivel(aspirante.resultado);
             dom = dom + `
             <tr>
-            <td>1</td>
-            <td>${aspirante.area}</td>
+            <td>${aspirante.resultado}</td>
+            <td>${aspirante.nombre}</td>
             <td>${aspirante.estudiante_cedula}</td>
-            <td>${aspirante.nivel}</td>
+            <td>`+ nivel+ `</td>
             <td>
             <div class="col-sm-6">
                 <a href= "#addEmployeeModal" data-id=${aspirante.estudiante_cedula} class="btn btn-info parano" data-toggle="modal">Contratar</a>
             </div>
             </td>
             </tr>
-            ` 
+            `;
         }
     )
     document.getElementById("tbody").innerHTML = dom
@@ -87,9 +87,27 @@ $(document).on("click", ".parano", function () {
     localStorage.setItem("cedula_tutor", cedula);
 });
 
+function getNivel(resultado){
+    if (resultado<60){
+        return "No aprobado";
+    }else if(resultado<=68){
+        return "Junior";
+    }else if(resultado<=77){
+        return "Senior basic";
+    }else if(resultado<=86){
+        return "Senior medium";
+    }else if(resultado<=95){
+        return "Senior advanced 1";
+    }else if(resultado<=100){
+        return "Senior advanced 2";
+    }else{
+        return "No aprobado";
+    }
+}
+
 async function renovarTabla(){
-    await verTutores()
-    dibujarTabla()
+    await listarAspirantes()
+    dibujarTabla2()
     del = document.getElementsByClassName("delete")
     mod = document.getElementsByClassName("edit")
 }

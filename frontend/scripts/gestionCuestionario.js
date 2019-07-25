@@ -100,12 +100,13 @@ function preguntaSeleccionada(obj,opc){
 }
 
 function verificarCampos(){
+    valido = true
     preguntas_respondidas.map(pregunta=>{
         if(pregunta.respuesta==""){
-            return false
+            valido = false
         }
     })
-    return true
+    return valido
 }
 
 function indexInClass(node,myClass) {
@@ -161,7 +162,7 @@ function enviarCuestionario(timer = true){
             }
         })
         .catch(function(error) {
-            alert(`Ocurrio un error, intente nuevamente.`)
+            alert(`Solo puede responder el cuestinario una vez cada 2 meses.`)
         });
 }
 

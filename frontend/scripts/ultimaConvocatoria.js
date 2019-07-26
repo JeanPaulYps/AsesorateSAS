@@ -10,11 +10,9 @@ async function convocatoriaDisponible(){
         })  
         .then((data) => data.json())
         .then(res =>{
-            if(res.message=="exitoso"){
-                if(permitido){
+            if(res.message=="exitoso" && permitido){
                     localStorage.setItem("convocatoria_id",res.convocatoria[0].id)
                     dibujarNav(true)
-                }
             }else{
                 throw res.message;
             }

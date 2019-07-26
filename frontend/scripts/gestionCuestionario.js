@@ -5,6 +5,28 @@ var opcB = []
 var opcC = []
 var opcD = []
 
+async function permitido(){
+    var aspirante_cedula = localStorage.getItem("cedula")
+    fetch('https://fathomless-mesa-60059.herokuapp.com/api/ultimoCuestionario', {
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text-plain, */*"
+        },
+        method: 'post',
+        credentials: "same-origin",
+        body: JSON.stringify({
+            aspirante_cedula: aspirante_cedula
+        })
+        })  
+        .then((data) => data.json())
+        .then(res =>{
+            return res.message
+        })
+        .catch(function(error) {
+            return false
+        });
+}
+
 
 async function verPreguntas(){
     await fetch('https://fathomless-mesa-60059.herokuapp.com/api/preguntasCuestionario', {
@@ -69,12 +91,18 @@ async function dibujarTabla(){
 }
 
 async function renovarTabla(){
-    await verPreguntas()
-    dibujarTabla()
-    opcA = document.getElementsByClassName("opcA")
-    opcB = document.getElementsByClassName("opcB")
-    opcC = document.getElementsByClassName("opcC")
-    opcD = document.getElementsByClassName("opcD")
+    permitido = await permitido()
+    if(permitido){
+        await verPreguntas()
+        dibujarTabla()
+        opcA = document.getElementsByClassName("opcA")
+        opcB = document.getElementsByClassName("opcB")
+        opcC = document.getElementsByClassName("opcC")
+        opcD = document.getElementsByClassName("opcD")
+    }else{
+        location.replace('http://www.asesorate.tk/frontend/estudiante.html');
+    }
+
     countdown();
 }
 

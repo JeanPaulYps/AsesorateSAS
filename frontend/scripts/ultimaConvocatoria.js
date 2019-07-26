@@ -1,6 +1,7 @@
+permitido = false
 async function convocatoriaDisponible(){
-    permitido = await permitido()
-    fetch('https://fathomless-mesa-60059.herokuapp.com/api/convocatoriaDisponible', {
+    await aspirante_permitido()
+    await fetch('https://fathomless-mesa-60059.herokuapp.com/api/convocatoriaDisponible', {
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json, text-plain, */*"
@@ -10,6 +11,7 @@ async function convocatoriaDisponible(){
         })  
         .then((data) => data.json())
         .then(res =>{
+            console.log(permitido)
             if(res.message=="exitoso" && permitido){
                     localStorage.setItem("convocatoria_id",res.convocatoria[0].id)
                     dibujarNav(true)
@@ -22,8 +24,8 @@ async function convocatoriaDisponible(){
         });
 }
 
-async function permitido(){
-    var aspirante_cedula = localStorage.getItem("cedula")
+async function aspirante_permitido(){
+    var aspirante_cedula = await localStorage.getItem("cedula")
     await fetch('https://fathomless-mesa-60059.herokuapp.com/api/ultimoCuestionario', {
         headers: {
             "Content-Type": "application/json",
@@ -37,10 +39,10 @@ async function permitido(){
         })  
         .then((data) => data.json())
         .then(res =>{
-            return res.message
+            permitido = res.message
         })
         .catch(function(error) {
-            return false
+            permitido = false
         });
 }
 

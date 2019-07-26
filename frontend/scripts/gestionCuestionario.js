@@ -4,8 +4,9 @@ var opcA = []
 var opcB = []
 var opcC = []
 var opcD = []
+permitido = false
 
-async function permitido(){
+async function aspirante_permitido(){
     var aspirante_cedula = localStorage.getItem("cedula")
     await fetch('https://fathomless-mesa-60059.herokuapp.com/api/ultimoCuestionario', {
         headers: {
@@ -20,10 +21,10 @@ async function permitido(){
         })  
         .then((data) => data.json())
         .then(res =>{
-            return res.message
+            permitido = res.message
         })
         .catch(function(error) {
-            return false
+            permitido = false
         });
 }
 
@@ -91,7 +92,7 @@ async function dibujarTabla(){
 }
 
 async function renovarTabla(){
-    permitido = await permitido()
+    await aspirante_permitido()
     if(permitido){
         await verPreguntas()
         dibujarTabla()

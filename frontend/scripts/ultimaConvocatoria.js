@@ -24,7 +24,7 @@ async function convocatoriaDisponible(){
 
 async function permitido(){
     var aspirante_cedula = localStorage.getItem("cedula")
-    fetch('https://fathomless-mesa-60059.herokuapp.com/api/ultimoCuestionario', {
+    await fetch('https://fathomless-mesa-60059.herokuapp.com/api/ultimoCuestionario', {
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json, text-plain, */*"

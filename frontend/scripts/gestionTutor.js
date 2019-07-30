@@ -2,6 +2,36 @@ var tutores = []
 var del = []
 var mod = []
 
+function areasConocimiento(){
+    fetch('https://fathomless-mesa-60059.herokuapp.com/api/buscarAreas', {
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text-plain, */*"
+        },
+        method: 'get',
+        credentials: "same-origin"
+    })
+        .then((data) => data.json())
+        .then(res =>{
+            dibujarAreas(res.areas)
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+
+}
+
+function dibujarAreas(areas){
+    $areas1 = document.getElementById("areas1");
+    $areas2 = document.getElementById("areas2");
+    dom = ''
+    areas.map(area=>{
+        dom = dom + `<option value="${area.id}">${area.nombre}</option>`
+    })
+    $areas1.innerHTML = dom
+    $areas2.innerHTML = dom
+}
+
 
 async function verTutores(){
     await fetch('https://fathomless-mesa-60059.herokuapp.com/api/verTutores', {

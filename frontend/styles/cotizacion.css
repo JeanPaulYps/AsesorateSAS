@@ -48,7 +48,6 @@ a {
 	text-decoration:none;
 }
 
-
 /***********************
     - Form Wrapper -
 ***********************/
@@ -135,6 +134,7 @@ form label {
 
 form .inputs {
 	float:left; 
+	display: block;
 	width:calc(100% - 160px);
 }
 
@@ -157,6 +157,10 @@ input.aweform, select.aweform, textarea.aweform {
 	-webkit-transition:background-position 0s, border .3s, color .3s;
 	   -moz-transition:background-position 0s, border .3s, color .3s;
 			transition:background-position 0s, border .3s, color .3s;
+	
+	
+	
+
 }
 
 input.aweform[type=text], input.aweform[type=number],textarea.aweform, select.aweform {

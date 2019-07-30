@@ -44,7 +44,7 @@
                 <!-- Form -->  
                 <form id="frm_contact" name="frm_contact" action=" " method="post">
                     <div class="field">
-                        <label for="id_categoria">Área</label>
+                        <label for="id_categoria">Área <span class="required">*</label>
                         <div class="inputs">
                           <select class="aweform" id="area" name="area">
                             <option value='MATEMATICAS'>MATEMÁTICAS</option>
@@ -57,8 +57,8 @@
                           </select>
                         </div>  
                       </div>
-			
-			<!--@felondonoa-->
+
+                      <!--@felondonoa-->
                       <div class="field">
                         <label for="id_categoria">Tutor <span class="required">*</span></label>
                         <div class="inputs">
@@ -68,7 +68,9 @@
                           </select>
                         </div>  
                       </div>
-                   
+
+                      <!--@felondonoa-->
+                      
                       <div class="field">
                         <label for="id_categoria">Día <span class="required">*</span></label>
                         
@@ -90,8 +92,11 @@
                                 <input type="time" name="hora_fin" min="06:00" max="20:00" step="3600" required >                              
                             </div>  
                           </div>
-			
-		  <!-- NO NECESARIO SEGUN HITORIA
+                      
+
+                      <!---->
+                      
+                  <!-- NO NECESARIO SEGUN HITORIA
                   <div class="field">
                     <label for="id_categoria">Nivel</label>
                     <div class="inputs">
@@ -104,23 +109,25 @@
                       </select>
                     </div>  
                   </div>
+                  
                   <div class="field">
                         <label for="nombre">Cedula del tutor<span class="required">*</span></label>
                         <div class="inputs">
                             <input class="aweform small" type="text" name="cedula_tutor" required >
                      </div>
                     </div>
+                    
                     <div class="field">
                         <label for="horas">Horas de asesoría<span class="required">*</span></label>
                         <div class="inputs">
-                            <input class="aweform small" type="number" name="horas" min = "0" required >
+                            <input class="aweform small" type="number" name="horas" required >
                      </div>
                     </div>
-		    -->
+                    -->
                   
                     <div class="botones">
                             <a href="cotizaciones.html">Cancelar</a>
-                            <button type="submit" id="Aceptar">Aceptar</button>
+                            <button type="submit" id="Aceptar">Reservar</button>
                         </div>
                   
                 </form>
@@ -138,4 +145,5 @@
   <script>
   convocatoriaDisponible();
   </script>
+
 </html>

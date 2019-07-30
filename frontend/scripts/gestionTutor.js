@@ -1,9 +1,10 @@
 var tutores = []
 var del = []
 var mod = []
+var areas = []
 
-function areasConocimiento(){
-    fetch('https://fathomless-mesa-60059.herokuapp.com/api/buscarAreas', {
+async function areasConocimiento(){
+    await fetch('https://fathomless-mesa-60059.herokuapp.com/api/buscarAreas', {
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json, text-plain, */*"
@@ -13,6 +14,7 @@ function areasConocimiento(){
     })
         .then((data) => data.json())
         .then(res =>{
+            areas = res.areas
             dibujarAreas(res.areas)
         })
         .catch(function(error) {
@@ -62,7 +64,7 @@ async function dibujarTabla(){
             <td>${tutor.cedula}</td>
             <td>${tutor.correo}</td>
             <td>${tutor.telefono}</td>
-            <td>${tutor.area}</td>
+            <td>${area(tutor.area)}</td>
             <td>${tutor.nivel}</td>
             <td>
                 <a href="#editEmployeeModal" onclick="TutorSeleccionado(this,'edit')" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
@@ -75,7 +77,19 @@ async function dibujarTabla(){
     document.getElementById("tbody").innerHTML = dom
 }
 
+function area(id){
+    nombre = ''
+    areas.map(area=>{
+        if(id==area.id){
+            nombre = area.nombre
+            return ""
+        }
+    })
+    return nombre
+}
+
 async function renovarTabla(){
+    await areasConocimiento();
     await verTutores()
     dibujarTabla()
     del = document.getElementsByClassName("delete")

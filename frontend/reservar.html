@@ -57,6 +57,41 @@
                           </select>
                         </div>  
                       </div>
+			
+			<!--@felondonoa-->
+                      <div class="field">
+                        <label for="id_categoria">Tutor <span class="required">*</span></label>
+                        <div class="inputs">
+                          <select class="aweform" id="tutor" name="tutor">
+                            <option value='Tutor1'>Nombre Apellido Tutor1</option>
+                            <option value='Tutor2'>Nombre Apellido Tutor2</option>
+                          </select>
+                        </div>  
+                      </div>
+                   
+                      <div class="field">
+                        <label for="id_categoria">Día <span class="required">*</span></label>
+                        
+                        <div class="inputs">
+                            <input type="date" name="fecha" required>                              
+                        </div>  
+                      </div>
+
+                      <div class="field">
+                          <label for="id_categoria">Hora Inicio <span class="required">*</span></label>
+                          <div class="inputs">
+                            <input type="time" name="hora_inicio" min="06:00" max="20:00" step="3600" required>
+                          </div>  
+                        </div>
+
+                        <div class="field">
+                            <label for="id_categoria">Hora Fin <span class="required">*</span></label>
+                            <div class="inputs">
+                                <input type="time" name="hora_fin" min="06:00" max="20:00" step="3600" required >                              
+                            </div>  
+                          </div>
+			
+		  <!-- NO NECESARIO SEGUN HITORIA
                   <div class="field">
                     <label for="id_categoria">Nivel</label>
                     <div class="inputs">
@@ -81,6 +116,7 @@
                             <input class="aweform small" type="number" name="horas" min = "0" required >
                      </div>
                     </div>
+		    -->
                   
                     <div class="botones">
                             <a href="cotizaciones.html">Cancelar</a>

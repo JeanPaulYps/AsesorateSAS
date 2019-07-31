@@ -3,7 +3,7 @@
  <script>sesion('Estudiante')</script>
  -->
 <html>
-  <head>
+ <head>
       <meta http-equiv="content-type" content="text/html; charset=utf-8">
       <title>AsesorateSAS</title>
       <link rel="stylesheet" type="text/css" href="styles/main.css">
@@ -17,7 +17,8 @@
           <ul class="enlaces">
             <div id="nav">
               <li><a href="reservar.html">Reservar</a></li>
-              <li><a href="cotizaciones_inicio.html">Realizar cotización</a></li>
+              <li><a href="cotizaciones.html">Realizar cotización</a></li>
+              <li><button onclick="cerrarSesion();">Salir</button></li>
             </div>
           </ul>
       </header>
@@ -68,12 +69,13 @@
                 
                 <div class="form-submit">
                     <button type="submit" id="submit" name="submit"><i class="fa fa-chevron-circle-right"></i> Calcular cotización</button>   
+                    <div style="visibility: hidden" id="cotizacion">
+                      <h3>El precio de su cotización es:</h3>
+                      <strong name="cotizacion" style="color: #16cc4d" id="mensaje"></strong>
+        
+                  </div>
                 </div>
-                <div style="visibility: hidden" id="cotizacion">
-                  <h3>El precio de su cotización es:</h3>
-                  <strong name="cotizacion" style="color: #16cc4d" id="mensaje"></strong>
-    
-              </div>
+                
               </form>
     
               <br> <br>

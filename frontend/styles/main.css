@@ -35,3 +35,45 @@ header{
 .enlaces li a:visited{
     text-decoration: none;
 }
+.enlaces_2 {
+    width: 650px;
+    list-style: none;
+}
+
+.enlaces_2 ul{
+    list-style: none;
+}
+
+.enlaces_2 > li {
+    position: relative;
+    display: inline-block;
+}
+
+.enlaces_2 > li > a{
+    display: block;
+    padding: 5px 20px;
+}
+
+.enlaces_2 li a {
+    text-decoration: none;
+    color: white;
+    padding: 0.65em;
+    border-radius: 5px;
+}
+.enlaces_2 li a:visited{
+    text-decoration: none;
+}
+
+.submenu_1{
+    width: 100%;
+    position:absolute;
+    background-color: #084c61;
+    display: none;
+}
+
+.submenu_1 li a{
+   display: block;
+   padding: 5px;
+}
+.enlaces_2 li:hover .submenu_1{
+    display: block;}

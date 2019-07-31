@@ -1,0 +1,99 @@
+<!--
+<script src="scripts/validarSesion.js"></script>
+ <script>sesion('Estudiante')</script>
+ -->
+<html>
+  <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <title>AsesorateSAS</title>
+      <link rel="stylesheet" type="text/css" href="styles/main.css">
+      <link rel="stylesheet" type="text/css" href="styles/registro.css">
+      <link rel="stylesheet" type="text/css" href="styles/cotizacion.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+      <header>
+          <h1>Asesorate S.A.S</h1>
+          <ul class="enlaces">
+            <div id="nav">
+              <li><a href="reservar.html">Reservar</a></li>
+              <li><a href="cotizaciones.html">Realizar cotización</a></li>
+            </div>
+          </ul>
+      </header>
+      <h1 color = "white">Obtén tu cotización</h1>
+      <br> <br>
+      <div class="ajax-contact-form">
+          <div class="container">
+          
+            <!-- Title -->
+            <div class="title">
+              Formulario de Cotización 
+    
+            </div>
+            
+            <div class="form-holder">
+            
+              <!-- Notification -->
+              <div class="notification canhide">
+                <div class="wrapper">
+                  <div class="inner"></div>
+                </div>
+              </div>  
+                
+              <!-- Form -->       
+     
+              <form id="frm_contact" name="frm_contact" action=" " method="post">
+          <div class="field">
+                  <label for="id_categoria">Tema</label>
+                  <div class="inputs">
+                    <select class="aweform" id="subject" name="subject">
+                      <option value='JUNIOR'>JUNIOR</option>
+                      <option value='SENIOR BASIC'>SENIOR BASIC</option>
+                      <option value='SENIOR MEDIUM'>SENIOR MEDIUM</option>
+                      <option value='SENIOR ADVANCED 1'>SENIOR ADVANCED 1</option>
+                      <option value='SENIOR ADVANCED 2'>SENIOR ADVANCED 2</option>
+                    </select>
+                  </div>  
+                </div>
+                <div class="field">
+                  <label for="horas">Horas de asesoría  <span class="required">*</span></label>
+                  <div class="inputs">
+                    <input class="aweform small" type="number" name="horas" id="horas" required >
+                </div>
+    
+                <br>
+                <br>
+     
+                
+                <div class="form-submit">
+                    <button type="submit" id="submit" name="submit"><i class="fa fa-chevron-circle-right"></i> Calcular cotización</button>   
+                    <div style="visibility: hidden" id="cotizacion">
+                      <h3>El precio de su cotización es:</h3>
+                      <strong name="cotizacion" style="color: #16cc4d" id="mensaje"></strong>
+        
+                  </div>
+                </div>
+                
+              </form>
+    
+              <br> <br>
+    
+    
+              
+    
+              <table>
+            
+        </table>
+              
+            </div>
+            
+          </div>
+        </div>
+  </body>
+<script src="scripts/cotizacion.js"></script>
+<script src="scripts/ultimaConvocatoria.js"></script>
+<script>
+convocatoriaDisponible();
+</script>
+</html>

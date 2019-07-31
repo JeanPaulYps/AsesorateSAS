@@ -14,13 +14,45 @@
                 <li ><a href="ver resultados.html" style="font-weight: 500;">Ver resultados</a></li>
                 <li ><a href="ver_preguntas.html" style="font-weight: 500;">Preguntas y convocatoria</a></li>
                 <li ><a href="tabla.html" style="font-weight: 500;">Tutores</a></li>
-                <li ><a href="#" style="font-weight: 500;">Categoría/nivel</a></li>
-                <li ><a href="#" style="font-weight: 500;">Editar contenido</a></li>
+                <li ><a href="#" style="font-weight: 500;">Editar contenido</a>
+                        <ul class = "submenu_1">
+                            <li ><a href= "#editEmployeeModal" style="font-weight: 500;" data-toggle="modal">Quienes somos</a></li>
+                            <li ><a href= "#editEmployeeModal" style="font-weight: 500;" data-toggle="modal">Servicios</a></li>
+                            <li ><a href= "#editEmployeeModal" style="font-weight: 500;" data-toggle="modal">Aspirante</a></li>
+                        </ul>
+                    </li>
                 </li>
                 <li><button onclick="cerrarSesion();">Salir</button></li>
             </ul>
         </header>
         <h1 align = "center"> Bienvenido Jefe</h1>
         <p>Asesorate S.A.S., construyendo conocimiento desde el 2000</p>
+    <div id="editEmployeeModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="mform">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Editar Contenido</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body" style="width:50%; float:left;">
+                            <div class="form-group">
+                                <label>Contenido</label>
+                                <textarea name="comentarios" rows="10" cols="40">Escribe aquí tus comentarios</textarea>
+                            </div>
+                        </div>
+                        <div class="modal-body" style="width:50%; float:left;">
+                            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                                <input type="submit" id="mconfirmar" class="btn btn-info" value="Guardar">
+                        </div>                                                 
+                        <div class="modal-footer">
+                        </div>
+                        <p id='mmensaje' style="visibility: hidden;font-size: 15px;color:green">Contenido modificado correctamente.</p>
+                        <p id='mmensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al modificar el contenido.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

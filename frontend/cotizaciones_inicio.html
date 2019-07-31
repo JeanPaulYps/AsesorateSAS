@@ -3,7 +3,7 @@
  <script>sesion('Estudiante')</script>
  -->
 <html>
- <head>
+  <head>
       <meta http-equiv="content-type" content="text/html; charset=utf-8">
       <title>AsesorateSAS</title>
       <link rel="stylesheet" type="text/css" href="styles/main.css">
@@ -14,13 +14,19 @@
   <body>
       <header>
           <h1>Asesorate S.A.S</h1>
-          <ul class="enlaces">
-            <div id="nav">
-              <li><a href="reservar.html">Reservar</a></li>
-              <li><a href="cotizaciones.html">Realizar cotización</a></li>
-              <li><button onclick="cerrarSesion();">Salir</button></li>
-            </div>
-          </ul>
+         <ul class="enlaces">
+                li><a href="Quienes_somos.html">Quienes Somos</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="cotizaciones_inicio.html">Cotizar</a></li>
+                <li><a href="aspirante.html">Aspirante</a></li>
+                <li ><a href="#" style="font-weight: 500;">Registrar</a>
+                        <ul class = "submenu_1">
+                            <li ><a href="registro_aspirante.html" style="font-weight: 500;">Estudiante</a></li>
+                            <li ><a href=""registro.html" style="font-weight: 500;">Aspirante</a></li>
+                        </ul>
+                    </li>
+                <li><a href="ingresar.html">Iniciar Sesión</a></li>
+            </ul>
       </header>
       <h1 color = "white">Obtén tu cotización</h1>
       <br> <br>
@@ -69,13 +75,13 @@
                 
                 <div class="form-submit">
                     <button type="submit" id="submit" name="submit"><i class="fa fa-chevron-circle-right"></i> Calcular cotización</button>   
-                    <div style="visibility: hidden" id="cotizacion">
-                      <h3>El precio de su cotización es:</h3>
-                      <strong name="cotizacion" style="color: #16cc4d" id="mensaje"></strong>
-        
-                  </div>
+                    
                 </div>
-                
+                <div style="visibility: hidden" id="cotizacion">
+                  <h3>El precio de su cotización es:</h3>
+                  <strong name="cotizacion" style="color: #16cc4d" id="mensaje"></strong>
+    
+              </div>
               </form>
     
               <br> <br>
@@ -92,5 +98,9 @@
           </div>
         </div>
   </body>
-<script src="scripts/cotizacionInicial.js"></script>
+<script src="scripts/cotizacion.js"></script>
+<script src="scripts/ultimaConvocatoria.js"></script>
+<script>
+convocatoriaDisponible();
+</script>
 </html>

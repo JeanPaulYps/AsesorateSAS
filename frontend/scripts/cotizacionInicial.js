@@ -6,7 +6,7 @@ $("form").submit(function(event) {
         var subject = jQuery("[name = subject]").val();
         var precio = 0;
         
-        fetch("http://127.0.0.1:8000/api/cotizacionInicial",{
+        fetch("https://fathomless-mesa-60059.herokuapp.com/api/cotizacionInicial",{
             headers:{
                 "Content-Type" : "application/json",
                 "Accept" : "application/json, text-plain, */*"

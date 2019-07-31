@@ -63,11 +63,12 @@
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>Tutor</th>
-                                <th>Horas</th>
-                                <th>Inicio</th>
-                                <th>Fin</th>
-                                <th>Dia</th>
+                                <th>ID reserva</th>
+                                <th>Nombre tutor</th>
+                                <th>Área</th>
+                                <th>Fecha</th>
+                                <th>Hora inicio</th>
+                                <th>Hora fin</th>                           
                                 <th>Accion</th>
                             </tr>
                         </thead>
@@ -91,6 +92,38 @@
             `
 
             -->
+        <!-- Rechazar Modal HTML -->
+        <div id="RechazarModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form id="bform">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Rechazar</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body">
+
+                            <div class="modal-footer">
+                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                                <input type="submit" class="btn btn-danger" value="Rechazar">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+                    <!-- Confirmar Modal HTML -->
+        <div id="ConfirmarModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form id="bform">
+                            <div class="modal-header">
+                                <a href="calificar_tutor.html">Confirmar</a>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
     </body>
     <script src="scripts/ultimaConvocatoria.js"></script>
     <script>

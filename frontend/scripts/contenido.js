@@ -111,3 +111,29 @@ $("#sform").submit(function(event) {
             console.log(error);
         });
 });
+
+function mostrarContenido(vista){
+    contenedor = document.getElementById("contenido")
+
+    fetch('https://fathomless-mesa-60059.herokuapp.com/api/mostrarContenido', {
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text-plain, */*"
+        },
+        method: 'get',
+        credentials: "same-origin"
+    })
+        .then((data) => data.json())
+        .then(res =>{
+            if(vista == "q"){
+                contenedor.innerHTML = res.contenido.quienes_somos
+            }else if(vista=="s"){
+                contenedor.innerHTML = res.contenido.servicios
+            }else if (vista =="a"){
+                contenedor.innerHTML = res.contenido.aspirante
+            }
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+}

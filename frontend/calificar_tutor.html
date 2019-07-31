@@ -26,13 +26,14 @@
                         <p>Califique de 1 a 5 cada uno de los siguientes aspectos:</p>
                     </div>
                     
+                    <form action="" id="form" method="get">
                     <div class="pregunta_1">
                         <div class="container">
                                 <p> 1.  El tutor cumplió adecuadamente con el tiempo de la asesoría</p>
                                 <div class="calificacion">
                                     <div class="form-check-inline">
                                         <label class="form-check-label">
-                                          <input type="radio" class="form-check-input" name="seleccion_p1" value="1">1
+                                          <input type="radio" class="form-check-input" name="seleccion_p1" value="1" required>1
                                         </label>
                                     </div>
                                     <div class="form-check-inline">
@@ -65,7 +66,7 @@
                             <div class="calificacion">
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="seleccion_p2" value="1">1                                            </label>
+                                        <input type="radio" class="form-check-input" name="seleccion_p2" value="1" required>1                                            </label>
                                     </div>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
@@ -97,7 +98,7 @@
                             <div class="calificacion">
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="seleccion_p3" value="1">1                                            </label>
+                                        <input type="radio" class="form-check-input" name="seleccion_p3" value="1" required>1                                            </label>
                                     </div>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
@@ -129,7 +130,7 @@
                             <div class="calificacion">
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="seleccion_p4" value="1">1                                            </label>
+                                        <input type="radio" class="form-check-input" name="seleccion_p4" value="1" required>1                                            </label>
                                     </div>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
@@ -161,7 +162,7 @@
                             <div class="calificacion">
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="seleccion_p5" value="1">1                                            </label>
+                                        <input type="radio" class="form-check-input" name="seleccion_p5" value="1" required>1                                            </label>
                                     </div>
                                 <div class="form-check-inline">
                                     <label class="form-check-label">
@@ -187,7 +188,7 @@
                         </div>
                     </div>
                     
-                    <form action="" id="form" method="get">
+                    
                         <div class="botones">
                             <a href="index.html">Cancelar</a>
                             <button type="submit" id="submit" name="submit">
@@ -195,8 +196,8 @@
                             </button>
                         </div>
                     </form> 
-
                 </div>        
         </div>
     </body>
+    <script src="scripts/gestionCalificacionTutor.js"></script>
 </html>

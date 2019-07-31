@@ -25,7 +25,6 @@ $("#aform").submit(function(event) {
                 document.getElementById("aform").reset();
                 mensaje.style.visibility = 'visible'
                 mensaje2.style.visibility = 'hidden'
-                renovarTabla()
             }else{
                 throw res.message;
             }
@@ -64,7 +63,6 @@ $("#qform").submit(function(event) {
                 document.getElementById("qform").reset();
                 mensaje.style.visibility = 'visible'
                 mensaje2.style.visibility = 'hidden'
-                renovarTabla()
             }else{
                 throw res.message;
             }
@@ -80,7 +78,7 @@ $("#sform").submit(function(event) {
     event.preventDefault();
     var aspirante = ""
     var quienes_somos = ""
-    var servicios = jQuery("[name=qcontenido]").val();
+    var servicios = jQuery("[name=scontenido]").val();
 
     var mensaje= document.querySelector("#smensaje")
     var mensaje2= document.querySelector("#smensaje2");
@@ -103,7 +101,6 @@ $("#sform").submit(function(event) {
                 document.getElementById("sform").reset();
                 mensaje.style.visibility = 'visible'
                 mensaje2.style.visibility = 'hidden'
-                renovarTabla()
             }else{
                 throw res.message;
             }

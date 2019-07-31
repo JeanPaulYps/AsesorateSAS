@@ -294,114 +294,106 @@ body {
                 </div>
                 <div class="row">
                     <div class="col-sm-6" style="margin: 10px 450px 10px;">
-                    <a href= "#editEmployeeModal" data-id=${tutor.cedula} class="btn btn-info" data-toggle="modal" style='width:200px; height:41px'>Quienes Somos</a>
+                    <a href= "#quienesSomos" data-id=${tutor.cedula} class="btn btn-info" data-toggle="modal" style='width:200px; height:41px'>Quienes Somos</a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-6" style="margin: 10px 450px 10px;">
-                    <a href= "#editEmployeeModal" data-id=${tutor.cedula} class="btn btn-info" data-toggle="modal" style='width:200px; height:41px'>Servicios</a>
+                    <a href= "#servicios" data-id=${tutor.cedula} class="btn btn-info" data-toggle="modal" style='width:200px; height:41px'>Servicios</a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-6" style="margin: 10px 450px 10px;">
-                    <a href= "#editEmployeeModal" data-id=${tutor.cedula} class="btn btn-info" data-toggle="modal" style='width:200px; height:41px'>Aspirante</a>
+                    <a href= "#aspirante" data-id=${tutor.cedula} class="btn btn-info" data-toggle="modal" style='width:200px; height:41px'>Aspirante</a>
                     </div>
                 </div>
         </div>
         <!-- Edit Modal HTML -->
-        <div id="addEmployeeModal" class="modal fade">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <form id="aform">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Agregar nueva información del tutor</h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                            </div>
-                            <div class="modal-body" style="width:50%; float:left;">
-                                <div class="form-group">
-                                            <label>Porcentaje</label>
-                                            <input type="text" name="aporcentaje" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Banco</label>
-                                    <input type="text" name="abanco" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="modal-body" style="width:50%; float:left;">
-                                <div class = "form-group">
-                                    <label for="atipo_cuenta">Tipo de cuenta</label>
-                                    <div class="inputs">
-                                        <select class="form-control" id="subject" name="atipo_cuenta" required>
-                                            <option value='Corriente'>Corriente</option>
-                                            <option value='Ahorros'>Ahorros</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Número de cuenta</label>
-                                    <input type="text" name="anumero_cuenta" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                                <input type="submit" id="confirmar" class="btn btn-info" value="Guardar">
-                            </div>
-                            <p id='amensaje' style="visibility: hidden;font-size: 15px;color:green">Tutor registrado correctamente.</p>
-                            <p id='amensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al registrar el tutor.</p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        
-        <!-- Edit Modal HTML -->
-        <div id="editEmployeeModal" class="modal fade">
+        <div id="quienesSomos" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form id="mform">
+                    <form id="qform">
                         <div class="modal-header">
-                            <h4 class="modal-title">Editar Contenido</h4>
+                            <h4 class="modal-title">Editar Quienes somos</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body" style="width:50%; float:left;">
                             <div class="form-group">
                                 <label>Contenido</label>
-                                <textarea name="comentarios" rows="10" cols="40">Escribe aquí tus comentarios</textarea>
+                                <textarea name="qcontenido" rows="10" cols="40">Escribe aquí el nuevo contenido de quienes somos.</textarea>
                             </div>
                         </div>
                         <div class="modal-body" style="width:50%; float:left;">
                             <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
                                 <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                                <input type="submit" id="mconfirmar" class="btn btn-info" value="Guardar">
+                                <input type="submit" id="qconfirmar" class="btn btn-info" value="Guardar">
                         </div>                                                 
                         <div class="modal-footer">
                         </div>
-                        <p id='mmensaje' style="visibility: hidden;font-size: 15px;color:green">Contenido modificado correctamente.</p>
-                        <p id='mmensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al modificar el contenido.</p>
+                        <p id='qmensaje' style="visibility: hidden;font-size: 15px;color:green">Contenido modificado correctamente.</p>
+                        <p id='qmensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al modificar el contenido.</p>
                     </form>
                 </div>
             </div>
         </div>
-        <!-- Delete Modal HTML -->
-        <div id="deleteEmployeeModal" class="modal fade">
+
+        <!-- Edit Modal HTML -->
+        <div id="servicios" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form id="bform">
+                    <form id="sform">
                         <div class="modal-header">
-                            <h4 class="modal-title">Borrar Pregunta</h4>
+                            <h4 class="modal-title">Editar Servicios</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
-                        <div class="modal-body">
-                            <p>¿Está seguro de que quiere borrar esta pregunta?</p>
-                            <p class="text-warning"><small>Esta acción no puede restaurarse.</small></p>
+                        <div class="modal-body" style="width:50%; float:left;">
+                            <div class="form-group">
+                                <label>Contenido</label>
+                                <textarea name="scontenido" rows="10" cols="40">Escribe aquí el nuevo contenido de servicios.</textarea>
+                            </div>
                         </div>
+                        <div class="modal-body" style="width:50%; float:left;">
+                            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                                <input type="submit" id="sconfirmar" class="btn btn-info" value="Guardar">
+                        </div>                                                 
                         <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                            <input type="submit" class="btn btn-danger" value="Borrar">
                         </div>
+                        <p id='smensaje' style="visibility: hidden;font-size: 15px;color:green">Contenido modificado correctamente.</p>
+                        <p id='smensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al modificar el contenido.</p>
                     </form>
                 </div>
             </div>
         </div>
+
+        <!-- Edit Modal HTML -->
+        <div id="aspirante" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="aform">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Editar aspirante.</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body" style="width:50%; float:left;">
+                            <div class="form-group">
+                                <label>Contenido</label>
+                                <textarea name="acontenido" rows="10" cols="40">Escribe aquí el nuevo contenido de aspirante.</textarea>
+                            </div>
+                        </div>
+                        <div class="modal-body" style="width:50%; float:left;">
+                            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                                <input type="submit" id="aconfirmar" class="btn btn-info" value="Guardar">
+                        </div>                                                 
+                        <div class="modal-footer">
+                        </div>
+                        <p id='amensaje' style="visibility: hidden;font-size: 15px;color:green">Contenido modificado correctamente.</p>
+                        <p id='amensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al modificar el contenido.</p>
+                    </form>
+                </div>
+            </div>
+                </div>
     </body>
-    <script src="scripts/gestionRespuestas.js"></script>
+    <script src="scripts/contenido.js"></script>
 </html>

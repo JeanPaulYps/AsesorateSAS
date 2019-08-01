@@ -6,7 +6,7 @@ if (!(cedula && pass)){
 }
 
 function sesion(){
-    fetch("http://127.0.0.1:8000/api/validarTutor",{
+    fetch("https://fathomless-mesa-60059.herokuapp.com/api/validarTutor",{
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json, text-plain, */*"

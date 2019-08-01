@@ -24,9 +24,10 @@ async function dibujarTabla(){
                 </div>
                 </td>
             </tr>
-            `
+            `;
         }
     )
+    document.getElementById("tbody").innerHTML = dom;
 }
 
 async function listarReservas() {

@@ -5,7 +5,7 @@ $("form").submit(function(event){
     var s3 = jQuery("input:radio[name=seleccion_p3]:checked").val();
     var s4 = jQuery("input:radio[name=seleccion_p4]:checked").val();
     var s5 = jQuery("input:radio[name=seleccion_p5]:checked").val();
-
+    cedula_tutor = localStorage.getItem("cedula_tutor");
     fetch('https://fathomless-mesa-60059.herokuapp.com/api/calificarTutor',{
         headers: {
             "Content-Type": "application/json",
@@ -18,11 +18,14 @@ $("form").submit(function(event){
             r2:s2,
             r3:s3,
             r4:s4,
-            r5:s5
+            r5:s5,
+            cedula_tutor:cedula_tutor
         })
     }).then((data) => data.json())
     .then(res =>{
         console.log(res.message);
+        localStorage.removeItem("cedula_tutor");
+        location.replace("http://www.asesorate.tk/frontend/estudiante.html");
     })
     .catch(function(error){
         console.log(error);

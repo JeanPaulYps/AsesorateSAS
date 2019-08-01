@@ -15,7 +15,7 @@ async function dibujarTabla(){
                 <td>${reserva.cedula_tutor}</td>
                 <td>${reserva.nombre}</td>
                 <td>area</td>
-                <td>fechas/td>
+                <td>fechas</td>
                 <td>hora inicio </td>
                 <td>hora fin </td>
                 <td>

@@ -1,5 +1,6 @@
 <script src="scripts/validarSesion.js"></script>
  <script>sesion('Estudiante')</script>
+
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -42,18 +43,12 @@
                 </div>  
                   
                 <!-- Form -->  
-                <form id="frm_contact" name="frm_contact" action=" " method="post">
+                <form id="frm_contact" name="frm_contact" id="form" action=" " method="post">
                     <div class="field">
                         <label for="id_categoria">Área <span class="required">*</label>
                         <div class="inputs">
-                          <select class="aweform" id="area" name="area">
-                            <option value='MATEMATICAS'>MATEMÁTICAS</option>
-                            <option value='BIOLOGIA'>BIOLOGÍA</option>
-                            <option value='QUIMICA'>QUÍMICA</option>
-                            <option value='FISICA'>FISÍCA</option>
-                            <option value='ESTADISTICA'>ESTADÍSTICA</option>
-                            <option value='CALCULO'>CÁLCULO</option>
-                            <option value='PROGRAMACION'>PROGRAMACIÓN</option>
+                          <select class="aweform" id="area" onchange="changeFunc()" style="min-width:256px;" name="area">
+                            <option value=''>Seleccione una area de conocimiento</option>
                           </select>
                         </div>  
                       </div>
@@ -62,9 +57,8 @@
                       <div class="field">
                         <label for="id_categoria">Tutor <span class="required">*</span></label>
                         <div class="inputs">
-                          <select class="aweform" id="tutor" name="tutor">
-                            <option value='Tutor1'>Nombre Apellido Tutor1</option>
-                            <option value='Tutor2'>Nombre Apellido Tutor2</option>
+                          <select class="aweform" id="tutor" name="cedula_tutor" style="min-width:256px;">
+                            <option value=''>Seleccione un tutor</option>
                           </select>
                         </div>  
                       </div>
@@ -92,38 +86,6 @@
                                 <input type="time" name="hora_fin" min="06:00" max="20:00" step="3600" required >                              
                             </div>  
                           </div>
-                      
-
-                      <!---->
-                      
-                  <!-- NO NECESARIO SEGUN HITORIA
-                  <div class="field">
-                    <label for="id_categoria">Nivel</label>
-                    <div class="inputs">
-                      <select class="aweform" id="nivel" name="nivel">
-                        <option value='JUNIOR'>JUNIOR</option>
-                        <option value='SENIOR BASIC'>SENIOR BASIC</option>
-                        <option value='SENIOR MEDIUM'>SENIOR MEDIUM</option>
-                        <option value='SENIOR ADVANCED 1'>SENIOR ADVANCED 1</option>
-                        <option value='SENIOR ADVANCED 2'>SENIOR ADVANCED 2</option>
-                      </select>
-                    </div>  
-                  </div>
-                  
-                  <div class="field">
-                        <label for="nombre">Cedula del tutor<span class="required">*</span></label>
-                        <div class="inputs">
-                            <input class="aweform small" type="text" name="cedula_tutor" required >
-                     </div>
-                    </div>
-                    
-                    <div class="field">
-                        <label for="horas">Horas de asesoría<span class="required">*</span></label>
-                        <div class="inputs">
-                            <input class="aweform small" type="number" name="horas" required >
-                     </div>
-                    </div>
-                    -->
                   
                     <div class="botones">
                             <a href="cotizaciones.html">Cancelar</a>
@@ -133,7 +95,8 @@
                 </form>
       
                 <br> <br>
-    
+                <p id='mensaje' style="visibility: hidden;font-size: 15px;color:green">Reserva realizada correctamente.</p>
+                <p id='mensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al reservar, revise que los datos esten correctos.</p>
                 
               </div>
               
@@ -144,6 +107,7 @@
   <script src="scripts/ultimaConvocatoria.js"></script>
   <script>
   convocatoriaDisponible();
+  areasConocimiento();
   </script>
 
 </html>

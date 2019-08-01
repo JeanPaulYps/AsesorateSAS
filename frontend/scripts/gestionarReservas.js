@@ -49,7 +49,7 @@ async function dibujarTabla(){
             <td>${tutor.nivel}</td>
             <td>
             <div class="col-sm-6">
-                <a href= "#addEmployeeModal" data-id=${tutor.cedula} class="btn btn-info parano" data-toggle="modal">Cancelar</a>
+                <a href= "#deleteEmployeeModal" data-id=${tutor.cedula} class="btn btn-info parano" data-toggle="modal">Cancelar</a>
             </div>
             </td>
             </tr>

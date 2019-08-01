@@ -1,7 +1,7 @@
 var cedula_estudiante = localStorage.getItem('cedula');
 var reservas = [];
 
-window.onload() = async() =>{
+window.onload = async() =>{
     renovarTabla();
 }
 

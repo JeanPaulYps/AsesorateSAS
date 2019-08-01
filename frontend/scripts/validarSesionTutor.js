@@ -21,7 +21,7 @@ function sesion(){
         .then((data) => data.json())
         .then(res => {
             if(!res.verif){
-                location.replace('http://www.asesorate.tk/frontend/index.html');
+                console.log(res);
             }
         }).catch(function(error) {
             console.log(error);

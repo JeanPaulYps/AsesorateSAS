@@ -50,7 +50,7 @@ async function dibujarTabla(){
 }
 
 $(document).on("click", ".parano", function(){
-    var cedula_estudiante = $this.attr('data-id');
+    var cedula_estudiante = $(this).attr('data-id');
     realizarAsesoria(cedula_estudiante);
 })
 

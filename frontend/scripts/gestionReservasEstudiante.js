@@ -43,6 +43,7 @@ async function listarReservas() {
     })
         .then((data) => data.json())
         .then(res => {
+            console.log(res);
             reservas = res.reservas;
         }).catch(function(error) {
             console.log(error);
@@ -52,4 +53,38 @@ async function listarReservas() {
 async  function renovarTabla(){
     await listarReservas();
     dibujarTabla()
+}
+
+$(document).on("click", ".parano", function(){
+    var cedula_estudiante = $this.attr('data-id');
+    verificarAsesoria(cedula_estudiante);
+})
+
+
+async function verificarAsesoria(cedula_tutor){
+    await fetch("https://fathomless-mesa-60059.herokuapp.com/api/verificarAsesoria",{
+        headers:{
+            "Content-Type":"application/json",
+            "Accept":"application/json, text-plain, */*"
+        },
+        method:'post',
+        credentials:"same-origin",
+        body:JSON.stringify({
+                cedula_tutor : cedula_tutor,
+                cedula_estudiante:cedula_estudiante
+        })
+    })
+        .then((data) => data.json())
+        .then(res => {
+            console.log(res.message);
+            if(res.message == "exitoso"){
+                localStorage.setItem('cedula_tutor',cedula_tutor);
+                location.replace("http://www.asesorate.tk/frontend/calificar_tutor.html");
+            }
+            else{
+                console.log(res.message);
+            }
+        }).catch(function(error) {
+            console.log(error);
+        });
 }

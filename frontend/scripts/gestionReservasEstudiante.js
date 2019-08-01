@@ -15,7 +15,8 @@ async function dibujarTabla(){
                 <td>${reserva.cedula_tutor}</td>
                 <td>${reserva.nombre}</td>
                 <td>area</td>
-                <td>fechas</td>
+                <td>fechas<
+                /td>
                 <td>hora inicio </td>
                 <td>hora fin </td>
                 <td>
@@ -57,7 +58,7 @@ async  function renovarTabla(){
 }
 
 $(document).on("click", ".parano", function(){
-    var cedula_estudiante = $this.attr('data-id');
+    var cedula_estudiante = $(this).attr('data-id');
     verificarAsesoria(cedula_estudiante);
 })
 

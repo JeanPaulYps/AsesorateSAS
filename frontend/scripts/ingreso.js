@@ -2,7 +2,7 @@ $("form").submit(function(event) {
     event.preventDefault();
     var correo = jQuery("[name=correo]").val();
     var password = jQuery("[name=password]").val();
-    fetch('https://fathomless-mesa-60059.herokuapp.com/api/logged', {
+    fetch('http://127.0.0.1:8000/api/logged', {
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json, text-plain, */*"
@@ -32,6 +32,9 @@ $("form").submit(function(event) {
                 }
                 else if(res['rol'][0]['rol'] == 'Aspirante'){
                     location.replace('http://www.asesorate.tk/frontend/aspirante.html');
+                }
+                else if(res.rol == 'tutor'){
+                    location.replace('http://www.asesorate.tk/frontend/tutor.html');
                 }
             }
         })

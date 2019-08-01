@@ -13,7 +13,7 @@ async function dibujarTabla(){
             dom = dom + `
             <tr>
                 <td>${reserva.cedula_tutor}</td>
-                <td>${reserva.tutores.nombre}</td>
+                <td>${reserva.nombre}</td>
                 <td>${reserva.areas.nombre}</td>
                 <td>fechas/td>
                 <td>hora inicio </td>

@@ -46,6 +46,7 @@ async function dibujarTabla(){
             `
         }
     )
+    document.getElementById("tbody").innerHTML = dom;
 }
 
 $(document).on("click", ".parano", function(){

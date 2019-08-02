@@ -32,13 +32,13 @@ async function dibujarTabla(){
     d = "";
     reservas.map(
         (reserva) =>{
-            if(reserva.estado = 'C'){
+            if(reserva.estado == 'C'){
                 estado = "Por Comprobar";
-                d = "disable";
+                d = `<button type="button" class="btn btn-secondary btn-lg" disabled>Realizada</button>`;
             }
             else{
                 estado = "Sin Comprobar";
-                d = "";
+                d = `<a href= "" data-id=${reserva.cedula_estudiante} class="btn btn-info parano" data-toggle="modal">Realizar</a>`;
             }
             dom = dom + `
             <tr>
@@ -49,8 +49,7 @@ async function dibujarTabla(){
                 <td>${reserva.hora_fin}</td>
                 <td>`+estado+`</td>
                 <td>
-                <div class="col-sm-6">
-                    <a href= "" data-id=${reserva.cedula_estudiante} class="btn btn-info parano" data-toggle="modal" `+d+`>Realizada</a>
+                <div class="col-sm-6">`+d+`
                 </div>
                 </td>
             </tr>

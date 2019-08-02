@@ -28,8 +28,18 @@ async function listarReservas() {
 
 async function dibujarTabla(){
     dom = ``;
+    estado = "";
+    d = "";
     reservas.map(
         (reserva) =>{
+            if(reserva.estado = 'C'){
+                estado = "Por Comprobar";
+                d = "disable";
+            }
+            else{
+                estado = "Sin Comprobar";
+                d = "";
+            }
             dom = dom + `
             <tr>
                 <td>${reserva.nombre}</td>
@@ -37,13 +47,14 @@ async function dibujarTabla(){
                 <td>${reserva.dia}</td>
                 <td>${reserva.hora_inicio}</td>
                 <td>${reserva.hora_fin}</td>
+                <td>`+estado+`</td>
                 <td>
                 <div class="col-sm-6">
-                    <a href= "" data-id=${reserva.cedula_estudiante} class="btn btn-info parano" data-toggle="modal">Realizada</a>
+                    <a href= "" data-id=${reserva.cedula_estudiante} class="btn btn-info parano" data-toggle="modal" `+d+`>Realizada</a>
                 </div>
                 </td>
             </tr>
-            `
+            `;
         }
     )
     document.getElementById("tbody").innerHTML = dom;
@@ -74,7 +85,9 @@ async function realizarAsesoria(cedula_estudiante){
     })
         .then((data) => data.json())
         .then(res => {
-            console.log(res.message);
+            if(res.message == "actualizado"){
+                renovarTabla();
+            }
         }).catch(function(error) {
             console.log(error);
         });

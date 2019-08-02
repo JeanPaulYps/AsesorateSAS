@@ -58,8 +58,8 @@ async  function renovarTabla(){
 }
 
 $(document).on("click", ".parano", function(){
-    var cedula_estudiante = $(this).attr('data-id');
-    verificarAsesoria(cedula_estudiante);
+    var cedula_tutor = $(this).attr('data-id');
+    verificarAsesoria(cedula_tutor);
 })
 
 
@@ -80,8 +80,10 @@ async function verificarAsesoria(cedula_tutor){
         .then(res => {
             console.log(res.message);
             if(res.message == "exitoso"){
-                localStorage.setItem('cedula_tutor',cedula_tutor);
-                location.replace("http://www.asesorate.tk/frontend/calificar_tutor.html");
+                // Si ya se quita esta parte de la historia
+                // localStorage.setItem('cedula_tutor',cedula_tutor);
+                // location.replace("http://www.asesorate.tk/frontend/calificar_tutor.html");
+                renovarTabla();
             }
             else{
                 console.log(res.message);

@@ -34,9 +34,9 @@ async function dibujarTabla(){
             <tr>
                 <td>${reserva.nombre}</td>
                 <td>${reserva.correo}</td>
-                <td>29-02-2020</td>
-                <td>hora inicio</td>
-                <td>hora fin </td>
+                <td>${reserva.dia}</td>
+                <td>${reserva.hora_inicio}</td>
+                <td>${reserva.hora_fin}</td>
                 <td>
                 <div class="col-sm-6">
                     <a href= "" data-id=${reserva.cedula_estudiante} class="btn btn-info parano" data-toggle="modal">Realizada</a>

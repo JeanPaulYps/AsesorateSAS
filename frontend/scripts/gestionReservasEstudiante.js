@@ -10,17 +10,18 @@ async function dibujarTabla(){
     dom = ``;
     reservas.map(
         (reserva) =>{
+
             dom = dom + `
             <tr>
                 <td>${reserva.cedula_tutor}</td>
                 <td>${reserva.nombre}</td>
-                <td>area</td>
-                <td>fechas</td>
-                <td>hora inicio </td>
-                <td>hora fin </td>
+                <td>${reserva.area}</td>
+                <td>${reserva.dia}</td>
+                <td>${reserva.hora_inicio}</td>
+                <td>${reserva.hora_fin}</td>
                 <td>
                 <div class="col-sm-6">
-                    <a href= "" data-id=${reserva.cedula_tutor} class="btn btn-info parano" data-toggle="modal">Realizada</a>
+                    <a href= "" data-id=${reserva.cedula_tutor} class="btn btn-info parano" data-toggle="modal">Comprobar</a>
                 </div>
                 </td>
             </tr>

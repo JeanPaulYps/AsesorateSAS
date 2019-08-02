@@ -33,11 +33,11 @@ async function dibujarTabla(){
     reservas.map(
         (reserva) =>{
             if(reserva.estado == 'C'){
-                estado = "Por Comprobar";
+                estado = "Realiza";
                 d = `<button type="button" class="btn btn-secondary btn-lg" disabled>Realizada</button>`;
             }
             else{
-                estado = "Sin Comprobar";
+                estado = "Pendiente";
                 d = `<a href= "" data-id=${reserva.cedula_estudiante} class="btn btn-info parano" data-toggle="modal">Realizar</a>`;
             }
             dom = dom + `

@@ -33,7 +33,7 @@ async function dibujarTabla(){
     reservas.map(
         (reserva) =>{
             if(reserva.estado == 'C'){
-                estado = "Realiza";
+                estado = "Realizada";
                 d = `<button type="button" class="btn btn-secondary btn-lg" disabled>Realizada</button>`;
             }
             else{

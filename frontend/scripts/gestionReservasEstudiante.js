@@ -81,9 +81,8 @@ async function verificarAsesoria(cedula_tutor){
             console.log(res.message);
             if(res.message == "exitoso"){
                 // Si ya se quita esta parte de la historia
-                // localStorage.setItem('cedula_tutor',cedula_tutor);
-                // location.replace("http://www.asesorate.tk/frontend/calificar_tutor.html");
-                renovarTabla();
+                localStorage.setItem('cedula_tutor',cedula_tutor);
+                location.replace("http://www.asesorate.tk/frontend/calificar_tutor.html");
             }
             else{
                 console.log(res.message);

@@ -31,6 +31,7 @@ form input,select{
     border-width: 1px;
     border-color: grey;
     float: center;
+    width: 14em;
 }
 form h1{
     text-align: center;

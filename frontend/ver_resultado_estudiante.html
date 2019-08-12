@@ -1,0 +1,101 @@
+<script src="scripts/validarSesion.js"></script>
+<script>sesion('Estudiante')</script>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>AsesorateSAS</title>
+        <link rel="stylesheet" type="text/css" href="styles/registro.css">
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="styles/tablas.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </head>
+    <body>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    // Activate tooltip
+                    $('[data-toggle="tooltip"]').tooltip();
+        
+                    // Select/Deselect checkboxes
+                    var checkbox = $('table tbody input[type="checkbox"]');
+                    $("#selectAll").click(function(){
+                        if(this.checked){
+                            checkbox.each(function(){
+                                this.checked = true;
+                            });
+                        } else{
+                            checkbox.each(function(){
+                                this.checked = false;
+                            });
+                        }
+                    });
+                    checkbox.click(function(){
+                        if(!this.checked){
+                            $("#selectAll").prop("checked", false);
+                        }
+                    });
+                });
+            </script>
+        <header>
+            <h1>Asesorate S.A.S</h1>
+            <ul class="enlaces">
+                <div id="nav">
+                    <li><a href="reservar.html">Reservar</a></li>              
+                    <li><a href="cotizaciones.html">Realizar cotización</a></li>
+                    <li><a href="ver_resultado_estudiante.html">Ver resultado</a></li>
+                    <li><button onclick="cerrarSesion();">Salir</button></li>
+                </div>
+            </ul>
+        </header>
+
+        <div class="container">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h2><b>Resultados de la prueba</b></h2>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Puntaje</th>
+                            <th>Nivel</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>
+                </table>
+                <table class="table table-striped table-hover">
+                    <tbody id="tbody">
+                    </tbody>
+                </table> 
+            </div>
+        </div>
+        <!-- Delete Modal HTML -->
+        <div id="addEmployeeModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="bform2">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Advertencia</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p>¿Seguro que quiere abandonar la convocatoria?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+                            <input type="submit" class="btn btn-danger" value="Abandonar"> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <script src="scripts/####.js"></script>
+                </html>

@@ -22,17 +22,6 @@ async function areasConocimiento(){
 
 }
 
-function dibujarAreas(areas){
-    $areas1 = document.getElementById("areas1");
-    $areas2 = document.getElementById("areas2");
-    dom = ''
-    areas.map(area=>{
-        dom = dom + `<option value="${area.id}">${area.nombre}</option>`
-    })
-    $areas1.innerHTML = dom
-    $areas2.innerHTML = dom
-}
-
 async function dibujarTablaAreas(){
     dom = ``
     areas.map(
@@ -50,17 +39,6 @@ async function dibujarTablaAreas(){
         }
     )
     document.getElementById("tbody2").innerHTML = dom
-}
-
-function area(id){
-    nombre = ''
-    areas.map(area=>{
-        if(id==area.id){
-            nombre = area.nombre
-            return ""
-        }
-    })
-    return nombre
 }
 
 async function renovarTabla(){
@@ -116,12 +94,11 @@ $("#bform2").submit(async function(event) {
 
 $("#aform2").submit(function(event) {
     event.preventDefault();
-    var codigo = jQuery("[name=aa_codigo]").val();
     var nombre = jQuery("[name=aa_nombre]").val();
 
     var mensaje= document.querySelector("#amensaje")
     var mensaje2= document.querySelector("#amensaje2");
-    fetch('https://fathomless-mesa-60059.herokuapp.com/api/agregarArea', { //Se debe crear la petieción (NO EXISTE)
+    fetch('https://fathomless-mesa-60059.herokuapp.com/api/crearArea', { //Se debe crear la petieción (NO EXISTE)
         headers: {                                                      
             "Content-Type": "application/json",
             "Accept": "application/json, text-plain, */*"
@@ -129,8 +106,7 @@ $("#aform2").submit(function(event) {
         method: 'post',
         credentials: "same-origin",
         body: JSON.stringify({
-            id: codigo,
-            nombre: nombre,
+            nombre: nombre
         })
     })
         .then((data) => data.json())

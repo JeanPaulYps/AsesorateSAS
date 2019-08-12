@@ -14,7 +14,6 @@ async function areasConocimiento(){
         .then((data) => data.json())
         .then(res =>{
             areas = res.areas
-            dibujarAreas(res.areas)
         })
         .catch(function(error) {
             console.log(error);
@@ -112,7 +111,7 @@ $("#aform2").submit(function(event) {
         .then((data) => data.json())
         .then(res =>{
             if (res.message == "exitoso"){
-                document.getElementById("aform").reset();
+                document.getElementById("aform2").reset();
                 mensaje.style.visibility = 'visible'
                 mensaje2.style.visibility = 'hidden'
                 renovarTabla()

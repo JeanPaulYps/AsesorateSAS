@@ -25,6 +25,8 @@ $("#aform").submit(function(event) {
                 document.getElementById("aform").reset();
                 mensaje.style.visibility = 'visible'
                 mensaje2.style.visibility = 'hidden'
+                $("#aconfirmacion").modal('hide')
+                mostrarContenidoMod();
             }else{
                 throw res.message;
             }
@@ -63,6 +65,8 @@ $("#qform").submit(function(event) {
                 document.getElementById("qform").reset();
                 mensaje.style.visibility = 'visible'
                 mensaje2.style.visibility = 'hidden'
+                $("#qconfirmacion").modal('hide')
+                mostrarContenidoMod();
             }else{
                 throw res.message;
             }
@@ -101,6 +105,8 @@ $("#sform").submit(function(event) {
                 document.getElementById("sform").reset();
                 mensaje.style.visibility = 'visible'
                 mensaje2.style.visibility = 'hidden'
+                $("#sconfirmacion").modal('hide')
+                mostrarContenidoMod();
             }else{
                 throw res.message;
             }
@@ -137,3 +143,27 @@ function mostrarContenido(vista){
             console.log(error);
         });
 }
+
+
+function mostrarContenidoMod(){
+    fetch('https://fathomless-mesa-60059.herokuapp.com/api/mostrarContenido', {
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text-plain, */*"
+        },
+        method: 'get',
+        credentials: "same-origin"
+    })
+        .then((data) => data.json())
+        .then(res =>{
+            jQuery("[name=qcontenido]").val(res.contenido.quienes_somos)
+            jQuery("[name=scontenido]").val(res.contenido.servicios)
+            jQuery("[name=acontenido]").val(res.contenido.aspirante)
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+}
+
+mostrarContenidoMod();
+

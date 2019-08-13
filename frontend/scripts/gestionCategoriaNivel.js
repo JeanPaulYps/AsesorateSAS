@@ -1,9 +1,9 @@
 var del = []
 var mod = []
-var areas = []
+var categorias = []
 
-async function areasConocimiento() {
-    await fetch('https://fathomless-mesa-60059.herokuapp.com/api/buscarAreas', {
+async function categoriaNivel() {
+    await fetch('https://fathomless-mesa-60059.herokuapp.com/api/buscarCategorias', {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json, text-plain, */*"
@@ -13,7 +13,7 @@ async function areasConocimiento() {
         })
         .then((data) => data.json())
         .then(res => {
-            areas = res.areas
+            categorias = res.categorias
         })
         .catch(function (error) {
             console.log(error);
@@ -21,17 +21,18 @@ async function areasConocimiento() {
 
 }
 
-async function dibujarTablaAreas() {
+async function dibujarTablaCategorias() {
     dom = ``
-    areas.map(
-        (area) => {
+    categorias.map(
+        (categoria) => {
             dom = dom + `
             <tr>
-            <td>${area.id}</td>
-            <td>${area.nombre}</td>
+            <td>${categoria.id}</td>
+            <td>${categoria.nombre_categoria}</td>
+            <td>${categoria.valor}</td>
             <td>
-                <a href="#editAreaConocimiento" onclick="AreaSeleccionada(this,'edit')" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
-                <a href="#deleteAreaConocimiento" onclick="AreaSeleccionada(this,'delete')" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Borrar">&#xE872;</i></a>
+                <a href="#editCategoriaNivel" onclick="CategoriaSeleccionada(this,'edit')" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
+                <a href="#deleteCategoriaNivel" onclick="CategoriaSeleccionada(this,'delete')" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Borrar">&#xE872;</i></a>
             </td>
             </tr>
             `
@@ -41,8 +42,8 @@ async function dibujarTablaAreas() {
 }
 
 async function renovarTabla() {
-    await areasConocimiento();
-    dibujarTablaAreas()
+    await categoriaNivel();
+    dibujarTablaCategorias()
     del = document.getElementsByClassName("delete")
     mod = document.getElementsByClassName("edit")
 }
@@ -51,26 +52,26 @@ window.onload = async () => {
     renovarTabla();
 }
 
-function AreaSeleccionada(obj, opc) {
+function CategoriaSeleccionada(obj, opc) {
     var pos = 0
     if (opc == 'delete') {
         pos = indexInClass(obj, del)
-        rellenarCamposAreas(areas[pos])
+        rellenarCamposCategorias(categorias[pos])
     } else {
         pos = indexInClass(obj, mod)
-        rellenarCamposAreas(areas[pos])
+        rellenarCamposCategorias(categorias[pos])
     }
 }
 
-function rellenarCamposAreas(area) {
-    jQuery("[name=ma_codigo]").val(area.id)
-    jQuery("[name=ma_nombre]").val(area.nombre)
+function rellenarCamposCategorias(categoria) {
+    jQuery("[name=ma_codigo]").val(categoria.id)
+    jQuery("[name=ma_nombre]").val(categoria.nombre_categoria)
 }
 
 $("#bform2").submit(async function (event) {
     event.preventDefault();
     var codigo = jQuery("[name=ma_codigo]").val();
-    fetch('https://fathomless-mesa-60059.herokuapp.com/api/eliminarArea', {
+    fetch('https://fathomless-mesa-60059.herokuapp.com/api/eliminarCategoria', {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json, text-plain, */*"
@@ -91,50 +92,16 @@ $("#bform2").submit(async function (event) {
         });
 })
 
-$("#aform2").submit(function (event) {
-    event.preventDefault();
-    var nombre = jQuery("[name=aa_nombre]").val();
-
-    var mensaje = document.querySelector("#amensaje")
-    var mensaje2 = document.querySelector("#amensaje2");
-    fetch('https://fathomless-mesa-60059.herokuapp.com/api/crearArea', { //Se debe crear la petieción (NO EXISTE)
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json, text-plain, */*"
-            },
-            method: 'post',
-            credentials: "same-origin",
-            body: JSON.stringify({
-                nombre: nombre
-            })
-        })
-        .then((data) => data.json())
-        .then(res => {
-            if (res.message == "exitoso") {
-                document.getElementById("aform2").reset();
-                mensaje.style.visibility = 'visible'
-                mensaje2.style.visibility = 'hidden'
-                renovarTabla()
-            } else {
-                throw res.message;
-            }
-        })
-        .catch(function (error) {
-            mensaje.style.visibility = 'hidden'
-            mensaje2.style.visibility = 'visible'
-            console.log(error);
-        });
-});
-
 $("#mform2").submit(function (event) {
     event.preventDefault();
     var codigo = jQuery("[name=ma_codigo]").val();
     var nombre = jQuery("[name=ma_nombre]").val();
+    var valor = jQuery("[name=ma_valor]").val();
 
     var mensaje = document.querySelector("#mmensaje")
     var mensaje2 = document.querySelector("#mmensaje2");
 
-    fetch('https://fathomless-mesa-60059.herokuapp.com/api/modificarArea', {
+    fetch('https://fathomless-mesa-60059.herokuapp.com/api/modificarCategoria', {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json, text-plain, */*"
@@ -144,6 +111,7 @@ $("#mform2").submit(function (event) {
             body: JSON.stringify({
                 id: codigo,
                 nombre: nombre,
+                valor: valor
             })
         })
         .then((data) => data.json())

@@ -99,7 +99,7 @@
         </div>
 
         <!-- Edit Modal HTML -->
-        <div id="editAValorHora" class="modal fade">
+        <div id="editCategoriaNivel" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form id="mform2">
@@ -109,30 +109,36 @@
                         </div>
                         <div class="modal-body" style="width:50%; float:left;">
                             <div class="form-group">
-                                <label>Valor Hora</label>
+                                <label>ID</label>
                                 <input type="text" name="ma_codigo" class="form-control" required>
                             </div>
                         </div>
                         <div class="modal-body" style="width:50%; float:left;">
                             <div class="form-group">
                             <label>Nombre</label>
-                                <input type="text" name="ma_nombre" class="form-control" required>
+                                <input type="text" name="ma_nombre" class="form-control" disabled>
                             </div>
 
-                        </div>                                                 
+                        </div>  
+                        <div class="modal-body" style="width:50%; float:left;">
+                            <div class="form-group">
+                                <label>Valor Hora</label>
+                                <input type="text" name="ma_valor" class="form-control" required>
+                            </div>
+                        </div>                                               
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
                             <input type="submit" id="mconfirmar" class="btn btn-info" value="Guardar">
                         </div>
-                        <p id='mmensaje' style="visibility: hidden;font-size: 15px;color:green">Área modificada correctamente.</p>
-                        <p id='mmensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al modificar el área.</p>
+                        <p id='mmensaje' style="visibility: hidden;font-size: 15px;color:green">Valor hora modificado correctamente.</p>
+                        <p id='mmensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al modificar el Valor hora.</p>
                     </form>
                 </div>
             </div>
         </div>
 
         <!-- Delete Modal HTML -->
-        <div id="delete" class="modal fade">
+        <div id="deleteCategoriaNivel" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form id="bform2">
@@ -155,6 +161,6 @@
 
     </body>
 
-    <script src="scripts/####.js"></script>
+    <script src="scripts/gestionCategoriaNivel.js"></script>
     
 </html>

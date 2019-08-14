@@ -63,6 +63,7 @@ $("#form").submit(function(event){
         })
     }).then((data) => data.json())
     .then(res => {
+        console.log(res.verif);
         if(res.verif){
             document.getElementById("confirmada").style.visibility="visible";
             document.getElementById("negada").style.visibility="hidden";

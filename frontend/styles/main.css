@@ -48,7 +48,7 @@ header{
     position: relative;
     display: inline-block;
 }
-
+block
 .enlaces_2 > li > a{
     display: block;
     padding: 5px 20px;
@@ -76,4 +76,15 @@ header{
    padding: 5px;
 }
 .enlaces_2 li:hover .submenu_1{
-    display: block;}
+    display: block;
+}
+.cuerpo{
+    position: absolute;
+    margin-left: 20%;
+    width: 60%;
+}
+#eslogan{
+    font-size: 2em;
+    text-shadow: 2px 2px 8px #000;
+}
+

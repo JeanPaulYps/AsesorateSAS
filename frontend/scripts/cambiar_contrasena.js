@@ -44,6 +44,37 @@ function validarContrasenas_nueva(){
 
 }
 
+$("#form").submit(function(event){
+    event.preventDefault();
+    var contrasena_nueva = jQuery("[name=contrasena_nueva]").val();
+    var contrasena_actual = jQuery("[name=contrasena_actual]").val();
+    var cedula = localStorage.getItem("cedula");
+    fetch('https://fathomless-mesa-60059.herokuapp.com/api/cambiarContrasena',{
+        headers:{
+            "Content-Type" : "application/json",
+            "Accept" : "application/json, text-plain, */*"
+        },
+        method:'post',
+        credentials:"same-origin",
+        body:JSON.stringify({
+            cedula:cedula,
+            contrasena: contrasena_actual,
+            nueva_contrasena:contrasena_nueva
+        })
+    }).then((data) => data.json())
+    .then(res => {
+        if(res.verif){
+            document.getElementById("confirmada").style.visibility="visible";
+            document.getElementById("negada").style.visibility="hidden";
+        }else{
+            document.getElementById("negada").style.visibility="visible";
+            document.getElementById("confirmada").style.visibility="hidden";
+        }
+    }).catch(function(error){
+        console.log(error);
+    });
+})
+
 
 
 

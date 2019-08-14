@@ -1,7 +1,16 @@
-$("form").submit(function(event) {
+baneado = false;
+
+$("form").submit(async function(event) {
     event.preventDefault();
     var correo = jQuery("[name=correo]").val();
     var password = jQuery("[name=password]").val();
+
+    await verificarBaneo(correo)
+    if(baneado){
+        alert('Usted esta baneado')
+        return 1;
+    }
+    
     fetch('https://fathomless-mesa-60059.herokuapp.com/api/logged', {
         headers: {
             "Content-Type": "application/json",
@@ -42,3 +51,21 @@ $("form").submit(function(event) {
             console.log(error);
         });
 });
+
+
+async function verificarBaneo(correo){
+    await fetch('https://fathomless-mesa-60059.herokuapp.com/api/verificarBaneo',{
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text-plain, */*"
+        },
+        method: 'post',
+        credentials: "same-origin",
+        body: JSON.stringify({
+            correo: correo
+        })
+    }).then(data=>data.json())
+    .then(res=>{
+        baneado = res.message
+    })
+}

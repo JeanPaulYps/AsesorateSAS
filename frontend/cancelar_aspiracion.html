@@ -1,11 +1,12 @@
 <script src="scripts/validarSesion.js"></script>
-<script>sesion('Aspirante')</script>
+<script>sesion('Estudiante')</script>
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <title>AsesorateSAS</title>
         <link rel="stylesheet" type="text/css" href="styles/registro.css">
         <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     </head>
     <body>
         <header>
@@ -16,17 +17,18 @@
                 <li><button onclick="cerrarSesion();">Salir</button></li>
             </ul>
         </header>
-		<div class="registro">
+		<div class="registro" id="contenedor">
 			<br>
 			<h1>¿Está seguro que desea cancelar su aspiración?</h1>
 
 				<div class="botones">
-					<a href="aspirante.html">Cancelar</a>
-					<button href= "index.html" type="submit" id="confirmar">Continuar</button>
+					<a href="estudiante.html">Cancelar</a>
+					<button type="submit" style="cursor: pointer" onclick='retirarse()' id="confirmar">Confirmar</button>
 				</div>
 				<br>
 
 		</div>
 			</form>
     </body>
+    <script src="scripts/retirarseConvocatoria.js"></script>
 </html>

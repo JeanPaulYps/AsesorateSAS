@@ -138,6 +138,7 @@ $("#bform").submit(async function(event) {
             cedula: cedula
         })
     })
+    $('#deleteEmployeeModal').modal('hide'); 
         .then((data) => data.json())
         .then(res =>{
             alert(res.message)
@@ -146,7 +147,6 @@ $("#bform").submit(async function(event) {
         .catch(function(error) {
             console.log(error);
         });
-   $('#deleteEmployeeModal').modal('hide'); 
 })
 
 $("#aform").submit(function(event) {

@@ -1,47 +1,61 @@
 <html>
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<title>AsesorateSAS</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="styles/main.css">
-		<link rel="stylesheet" type="text/css" href="styles/registro.css">
-		<link rel="stylesheet" type="text/css" href="styles/formulario.css">
-	</head>
-	<body>
-			<header>
-					<h1>Asesorate S.A.S</h1>
-					<ul class="enlaces_2">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>AsesorateSAS</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <link rel="stylesheet" type="text/css" href="styles/registro.css">
+        <link rel="stylesheet" type="text/css" href="styles/formulario.css">
+    </head>
+    <body>
+        <header>
+            <h1>Asesorate S.A.S</h1>
+            <ul class="enlaces_2">
                 <li><a href="Quienes_somos.html">Quienes Somos</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="cotizaciones_inicio.html">Cotizar</a></li>
                 <li><a href="aspirante.html">Aspirante</a></li>
                 <li ><a href="#" style="font-weight: 500;">Registrar</a>
-                        <ul class = "submenu_1">
-                            <li ><a href="registro_aspirante.html" style="font-weight: 500;">Estudiante</a></li>
-                            <li ><a href="registro.html" style="font-weight: 500;">Aspirante</a></li>
-                        </ul>
-                    </li>
+                    <ul class = "submenu_1">
+                        <li ><a href="registro_aspirante.html" style="font-weight: 500;">Estudiante</a></li>
+                        <li ><a href="registro.html" style="font-weight: 500;">Aspirante</a></li>
+                    </ul>
+                </li>
                 <li><a href="ingresar.html">Iniciar Sesión</a></li>
             </ul>
-				</header>
-		<div class="registro">
-			<br>
-			<h1>Trabaja con nosotros Asesorate S.A.S</h1>
-			<form action="" id="form" target="_blank" method="get">
-				<input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
-				<br>
-				<input type="text" name="cedula" onblur="validarCedula()" id="cedula" placeholder="Cédula" required>
-				<p name='ccvalidador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Esta cedula ya se encuentra registrada</p>
-				<br>
-				<input type="email" onblur="validarCorreo()" name="email" id="correo" placeholder="Correo" required>
-				<p name='cvalidador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Éste correo ya se encuentra registrado</p>
-				<br>
-				<input type="text" name="telefono" id="teléfono" placeholder="Teléfono" required>
-				<br>
-				<div class="field">
-                        <label for="Area">Área</label>
-                        <div class="inputs">
-                          <select class="aweform" id="subject" name="area">
+        </header>
+        <div class="registro">
+            <br>
+            <h1>Trabaja con nosotros Asesorate S.A.S</h1>
+            <form action="" id="form" target="_blank" method="get">
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre*" required>
+                <br>
+                <input type="text" name="cedula" onblur="validarCedula()" id="cedula" placeholder="Cédula*" required>
+                <p name='ccvalidador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Esta cedula ya se encuentra registrada</p>
+                <br>
+                <input type="email" onblur="validarCorreo()" name="email" id="correo" placeholder="Correo*" required>
+                <p name='cvalidador' style="visibility: hidden;font-size: 15px;color:red;position:absolute">Éste correo ya se encuentra registrado</p>
+                <br>
+                <input type="text" name="telefono" id="teléfono" placeholder="Teléfono*" required>
+                <br>
+                <div class="field">
+                    <label for="Banco">Banco*</label>
+                    <div class="inputs">
+                        <select class="aweform" id="subject" name="area">
+                            <option value='BBVA'>BBVA</option>
+                            <option value='BANCO DE OCCIDENTE'>BANCO DE OCCIDENTE</option>
+                            <option value='BANCO DE BOGOTÁ'>BANCO DE BOGOTÁ</option>
+                            <option value='BANCOLOMBIA'>BANCOLOMBIA</option>
+                            <option value='CITYBANK'>CITYBANK</option>
+                            <option value='DAVIVIENDA'>DAVIVIENDA</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="field">
+                    <label for="Area">Área*</label>
+                    <div class="inputs">
+                        <select class="aweform" id="subject" name="area">
                             <option value='MATEMATICAS'>MATEMÁTICAS</option>
                             <option value='BIOLOGIA'>BIOLOGÍA</option>
                             <option value='QUIMICA'>QUÍMICA</option>
@@ -49,33 +63,32 @@
                             <option value='ESTADISTICA'>ESTADÍSTICA</option>
                             <option value='CALCULO'>CÁLCULO</option>
                             <option value='PROGRAMACION'>PROGRAMACIÓN</option>
-                          </select>
-                        </div>  
-					  </div>
-					  
-				<br>					
-				<div class="field">
-						<label for="nivel">Nivel</label>
-						<div class="inputs">
-						  <select class="aweform" id="subject" name="nivel">
-							<option value='JUNIOR'>JUNIOR</option>
-							<option value='SENIOR BASIC'>SENIOR BASIC</option>
-							<option value='SENIOR MEDIUM'>SENIOR MEDIUM</option>
-							<option value='SENIOR ADVANCED 1'>SENIOR ADVANCED 1</option>
-							<option value='SENIOR ADVANCED 2'>SENIOR ADVANCED 2</option>
-						  </select>
-						</div>  
-					</div>
-				<div class="botones">
-					<a href="index.html">Cancelar</a>
-					<button type="submit" id="confirmar">Confirmar registro</button>
-				</div>
-				<br>
-				<p id='mensaje' style="visibility: hidden;font-size: 15px;color:green">Aspirante registrado correctamente.</p>
-				<p id='mensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al registrar el aspirante.</p>
-		</div>
-			</form>
-	</body>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="field">
+                    <label for="nivel">Nivel*</label>
+                    <div class="inputs">
+                        <select class="aweform" id="subject" name="nivel">
+                            <option value='JUNIOR'>JUNIOR</option>
+                            <option value='SENIOR BASIC'>SENIOR BASIC</option>
+                            <option value='SENIOR MEDIUM'>SENIOR MEDIUM</option>
+                            <option value='SENIOR ADVANCED 1'>SENIOR ADVANCED 1</option>
+                            <option value='SENIOR ADVANCED 2'>SENIOR ADVANCED 2</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="botones">
+                    <a href="index.html">Cancelar</a>
+                    <button type="submit" id="confirmar">Confirmar registro</button>
+                </div>
+                <br>
+                <p id='mensaje' style="visibility: hidden;font-size: 15px;color:green">Aspirante registrado correctamente.</p>
+                <p id='mensaje2' style="visibility: hidden;font-size: 15px;color:red">Ocurrio un error al registrar el aspirante.</p>
+        </div>
+            </form>
+    </body>
     <script src="scripts/aspirante.js"></script>
 </html>
 

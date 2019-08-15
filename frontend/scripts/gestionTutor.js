@@ -141,10 +141,13 @@ $("#bform").submit(async function(event) {
         .then((data) => data.json())
         .then(res =>{
             alert(res.message)
+            $('#deleteEmployeeModal').modal('hide'); 
+
             renovarTabla()
         })
         .catch(function(error) {
             console.log(error);
+            $('#deleteEmployeeModal').modal('hide'); 
         });
 })
 

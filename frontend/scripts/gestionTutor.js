@@ -146,6 +146,7 @@ $("#bform").submit(async function(event) {
         .catch(function(error) {
             console.log(error);
         });
+   $('#deleteEmployeeModal').modal('hide'); 
 })
 
 $("#aform").submit(function(event) {

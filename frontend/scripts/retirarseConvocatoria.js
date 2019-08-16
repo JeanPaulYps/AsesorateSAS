@@ -1,4 +1,36 @@
-aspirantes = []
+function consultarPuntaje(){
+    cedula = localStorage.getItem("cedula")
+    fetch('https://fathomless-mesa-60059.herokuapp.com/api/consultarPuntaje',{
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json, text-plain, */*"
+        },
+        method: 'post',
+        credentials: "same-origin",
+        body: JSON.stringify({
+            cedula : cedula
+        })
+    }).then((data)=>data.json())
+        .then(res=>{
+            if(res.puntaje){
+                document.getElementById("tbody").innerHTML = `
+                <tr>
+                <td>${res.puntaje.resultado}</td>
+                <td>${res.puntaje.nivel}</td>
+                <td>
+                <div id="retirarse">
+                    <a class="btn btn-danger" style="color:#fff" href="cancelar_aspiracion.html">Retirarse de la convocatoria</a>
+                </div>
+                </td>
+            </tr>
+                `
+            }else{
+                document.getElementById('mensaje').innerHTML=`
+                <h2 style="color:red;margin:auto">Debe presentar el cuestionario</h2>`
+            }
+        })
+}
+
 
 function retirarse(){
     cedula = localStorage.getItem("cedula")
@@ -18,42 +50,4 @@ function retirarse(){
             document.getElementById('contenedor').innerHTML=`
             <h2 style='color:green;margin:auto'>Usted se ha retirado de la convocatoria.</h2>`
         })
-}
-
-function buscarCedula(cedula = localStorage.getItem('cedula')){
-    esta = false
-    aspirantes.map(
-        (aspirante)=>{
-            if (aspirante.estudiante_cedula == cedula ){
-                esta = true
-                return 1;
-            }
-        }
-    )
-    return esta
-}
-
-async function listarAspirantes(){
-    await fetch("https://fathomless-mesa-60059.herokuapp.com/api/verAspirantes",{
-        headers:{
-            "Content-Type":"application/json",
-            "Accept":"application/json, text-plain, */*"
-        },
-        method:'get',
-        credentials:"same-origin"
-    }).then((data) => data.json())
-    .then(res =>{
-        aspirantes = res.aspirantes;
-    })
-    .catch(function(error){
-        console.log(error);
-    })
-}
-
-async function botonRetirar(){
-    await listarAspirantes();
-    esta = buscarCedula();
-    if(esta){
-        document.getElementById("retirarse").style.visibility = 'visible'
-    }
 }

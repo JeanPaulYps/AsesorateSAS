@@ -67,6 +67,7 @@ $("#form").submit(function(event){
         if(res.verif){
             document.getElementById("confirmada").style.visibility="visible";
             document.getElementById("negada").style.visibility="hidden";
+            localStorage.setItem('pass', contrasena_nueva);
         }else{
             document.getElementById("negada").style.visibility="visible";
             document.getElementById("confirmada").style.visibility="hidden";

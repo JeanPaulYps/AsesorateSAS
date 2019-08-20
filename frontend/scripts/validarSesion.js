@@ -36,3 +36,8 @@ function cerrarSesion(){
     localStorage.clear()
     location.replace('http://www.asesorate.tk/frontend/index.html');
 }
+
+funcion getName(){
+}
+
+

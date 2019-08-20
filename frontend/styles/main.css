@@ -19,6 +19,13 @@ header{
     -moz-box-shadow: 0px 4px 22px -3px rgba(0,0,0,0.37);
     box-shadow: 0px 4px 22px -3px rgba(0,0,0,0.37);
 }
+
+h1 a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5em;
+    border-radius: 5px;
+}
 .enlaces {
     list-style: none;
     padding: 1em;

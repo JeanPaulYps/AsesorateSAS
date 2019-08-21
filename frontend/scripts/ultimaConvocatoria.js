@@ -52,7 +52,6 @@ function dibujarNav(disponible){
         nav.innerHTML = `
         <li><a href="cuestionario.html">Presentar Cuestionario</a></li>
         <li><a href="reservar.html">Reservar</a></li>
-        <li><a href="reservas_hechas.html">Ver reservas</a></li>
         <li><a href="cotizaciones.html">Realizar cotización</a></li>
         <li><button onclick="cerrarSesion();">Salir</button></li>
         `

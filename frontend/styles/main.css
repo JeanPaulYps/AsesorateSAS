@@ -82,6 +82,7 @@ block
 .submenu_1 li a{
    display: block !important;
    padding: 5px !important;
+   z-index:500;
 }
 .enlaces_2 li:hover .submenu_1{
     display: block !important;

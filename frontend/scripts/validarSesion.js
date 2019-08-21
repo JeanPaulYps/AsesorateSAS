@@ -37,7 +37,3 @@ function cerrarSesion(){
     location.replace('http://www.asesorate.tk/frontend/index.html');
 }
 
-funcion getName(){
-}
-
-
